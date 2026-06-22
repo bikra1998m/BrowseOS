@@ -1,0 +1,18 @@
+# Large binary assets fetched by scripts/setup.sh.
+# Either commit them, or keep them out of git and run setup.sh on deploy.
+# (They are ~8MB total; uncomment to ignore.)
+# public/vendor/v86.wasm
+# public/vendor/libv86.js
+# public/images/*.iso
+# public/images/*.img
+*.log
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Launcher build artifacts
+launcher/dist/
+launcher/public/
+
+# Node relay dependencies
+relay/node_modules/

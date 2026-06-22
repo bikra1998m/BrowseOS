@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+if ! command -v firefox-esr >/dev/null 2>&1 ||
+   ! command -v Xorg >/dev/null 2>&1 ||
+   ! command -v browseros-firefox >/dev/null 2>&1; then
+  echo "Firefox GUI is not installed yet; installing the bundled packages..."
+  sh /mnt/tools/install-firefox.sh
+fi
+
+ip link set eth0 up 2>/dev/null || true
+echo "Connecting the VM network..."
+udhcpc -i eth0 -t 5 -n -q >/dev/null 2>&1 ||
+  ifup eth0 >/dev/null 2>&1 ||
+  echo "Warning: VM network setup did not receive a lease"
+echo "Starting Firefox inside the Alpine VM..."
+exec /usr/local/bin/browseros-firefox

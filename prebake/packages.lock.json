@@ -1,0 +1,2760 @@
+{
+  "alpine_version": "3.24",
+  "arch": "x86",
+  "format": 1,
+  "packages": [
+    {
+      "filename": "acl-libs-2.3.2-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "acl-libs",
+      "repository": "main",
+      "sha256": "9dd329380b583bbabe5f685bf7d2623a0886aa45236ff9d88ba9046fecd2a065",
+      "size": 15332,
+      "version": "2.3.2-r1"
+    },
+    {
+      "filename": "adwaita-icon-theme-50.0-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "adwaita-icon-theme",
+      "repository": "community",
+      "sha256": "4626acd1609fd64dfd67aee3eed8c4f55dc57967a17793f62b68c306106b26a9",
+      "size": 1895484,
+      "version": "50.0-r1"
+    },
+    {
+      "filename": "alpine-base-3.24.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-base",
+      "repository": "main",
+      "sha256": "c9c102b73213edbb6f339613a11e8447e2e41fd888ead631b9cd9c4dad696c8d",
+      "size": 1326,
+      "version": "3.24.1-r0"
+    },
+    {
+      "filename": "alpine-baselayout-3.7.2-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-baselayout",
+      "repository": "main",
+      "sha256": "52bd91d095b23e08ee6c5b624f17882770b3d1b96ced2a68ff01a772dc87eeb6",
+      "size": 8277,
+      "version": "3.7.2-r1"
+    },
+    {
+      "filename": "alpine-baselayout-data-3.7.2-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-baselayout-data",
+      "repository": "main",
+      "sha256": "f7a4461f1aba0196a9997678cb7a0a71461b81e15fe76ea0c2ad5c868255d1fc",
+      "size": 10794,
+      "version": "3.7.2-r1"
+    },
+    {
+      "filename": "alpine-conf-3.22.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-conf",
+      "repository": "main",
+      "sha256": "304a672609b9004c974fa36373276254742b59a68038e638629d92b1fe5c1778",
+      "size": 66332,
+      "version": "3.22.0-r0"
+    },
+    {
+      "filename": "alpine-keys-2.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-keys",
+      "repository": "main",
+      "sha256": "1cac6815dcea1460880f4aec4541550ef2e2bc80cea19632f045db70f2bf7be1",
+      "size": 12751,
+      "version": "2.6-r0"
+    },
+    {
+      "filename": "alpine-release-3.24.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alpine-release",
+      "repository": "main",
+      "sha256": "7121d4109b7e24216bb46c4dabf72b67dd0dfd540204fc2cb0cb074c21e062ee",
+      "size": 2093,
+      "version": "3.24.1-r0"
+    },
+    {
+      "filename": "alsa-lib-1.2.15.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "alsa-lib",
+      "repository": "main",
+      "sha256": "61bc1eabaffd1cd2e653037b444fca9e1f4373f67b65f0937071808b4482042a",
+      "size": 484106,
+      "version": "1.2.15.3-r0"
+    },
+    {
+      "filename": "aom-libs-3.14.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "aom-libs",
+      "repository": "main",
+      "sha256": "e835b141fd56f7f8a8706241d57e669ada471464d600ed0c0a3099c3f3778384",
+      "size": 2291031,
+      "version": "3.14.1-r0"
+    },
+    {
+      "filename": "apk-tools-3.0.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "apk-tools",
+      "repository": "main",
+      "sha256": "abcc16817076e7c004a8f46d62e52874c1b6196f0906bc96c5b81b80785dc237",
+      "size": 57461,
+      "version": "3.0.6-r0"
+    },
+    {
+      "filename": "at-spi2-core-libs-2.60.4-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "at-spi2-core-libs",
+      "repository": "main",
+      "sha256": "0593c15b26789ec0efec5314d3f360ee6f83092f7921ad4ec2ea1374b59d2064",
+      "size": 85412,
+      "version": "2.60.4-r0"
+    },
+    {
+      "filename": "avahi-libs-0.9_rc4-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "avahi-libs",
+      "repository": "main",
+      "sha256": "e2855f163eeca6a1fec0870301ff8fae4d66ef45b3e8549f07bb4c7ac704323d",
+      "size": 43933,
+      "version": "0.9_rc4-r0"
+    },
+    {
+      "filename": "bash-5.3.9-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "bash",
+      "repository": "main",
+      "sha256": "f5f0956b8464729577b1021bb6301f23d9e7b010bf11aac3678409827484ee52",
+      "size": 494213,
+      "version": "5.3.9-r1"
+    },
+    {
+      "filename": "bash-completion-2.17.0-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "bash-completion",
+      "repository": "main",
+      "sha256": "b0916cb3193ff57c387baf4e552382cd290754bfab04669971ad8948c24a9322",
+      "size": 293649,
+      "version": "2.17.0-r1"
+    },
+    {
+      "filename": "bridge-1.5-r5.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "bridge",
+      "repository": "main",
+      "sha256": "f64118ee92421bda5e9832b75811c226c0ebea07fb6f518f5548ae52ae540e37",
+      "size": 2866,
+      "version": "1.5-r5"
+    },
+    {
+      "filename": "brotli-libs-1.2.0-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "brotli-libs",
+      "repository": "main",
+      "sha256": "ecb54296acafc3bb9a21dea29514c0d2214a005ada676677f8ef68e05a54d282",
+      "size": 409406,
+      "version": "1.2.0-r1"
+    },
+    {
+      "filename": "bubblewrap-0.11.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "bubblewrap",
+      "repository": "main",
+      "sha256": "e7eabc4fa5209208986ec607fc707924eb21c85b7dd09388be846eb8d3897fbb",
+      "size": 27496,
+      "version": "0.11.2-r0"
+    },
+    {
+      "filename": "busybox-1.37.0-r31.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "busybox",
+      "repository": "main",
+      "sha256": "be105938251366981416cdd35e5d8d529cc95ba624957bef217376ac7f502127",
+      "size": 507000,
+      "version": "1.37.0-r31"
+    },
+    {
+      "filename": "busybox-binsh-1.37.0-r31.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "busybox-binsh",
+      "repository": "main",
+      "sha256": "36509d5658811fe026a17b72c10749179c93b69f6f2e3ed6f5b01995c7015bc2",
+      "size": 1568,
+      "version": "1.37.0-r31"
+    },
+    {
+      "filename": "busybox-mdev-openrc-1.37.0-r31.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "busybox-mdev-openrc",
+      "repository": "main",
+      "sha256": "11eb3d29951ec55045709bb73b15f2715ed1fc346c6454ae932d260292432077",
+      "size": 2037,
+      "version": "1.37.0-r31"
+    },
+    {
+      "filename": "busybox-openrc-1.37.0-r31.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "busybox-openrc",
+      "repository": "main",
+      "sha256": "d2b799459712d74131ee328ee8d73f2641a46b7c4f0e56ba271bc0dc2db385b2",
+      "size": 3755,
+      "version": "1.37.0-r31"
+    },
+    {
+      "filename": "busybox-suid-1.37.0-r31.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "busybox-suid",
+      "repository": "main",
+      "sha256": "2c6982d41e940fd72d1cbaf1c5baf6e10bb47027cca1dece31f1e75ab3397a7b",
+      "size": 4188,
+      "version": "1.37.0-r31"
+    },
+    {
+      "filename": "c-ares-1.34.6-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "c-ares",
+      "repository": "main",
+      "sha256": "66b13a9278adb908d6236739412ce8daed2ec1a2b486f10df8f06c298e5167b5",
+      "size": 117119,
+      "version": "1.34.6-r0"
+    },
+    {
+      "filename": "ca-certificates-20260611-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "ca-certificates",
+      "repository": "main",
+      "sha256": "0c9e2da46e62b9aae84a6415af327e8e16659838562ef4c8560cf51e2f76bc32",
+      "size": 129956,
+      "version": "20260611-r0"
+    },
+    {
+      "filename": "ca-certificates-bundle-20260611-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "ca-certificates-bundle",
+      "repository": "main",
+      "sha256": "e7a42cc7a0cb31d1a1c5da627c07dd7d79a6aaacc26c79fce70c649d63193091",
+      "size": 107329,
+      "version": "20260611-r0"
+    },
+    {
+      "filename": "cairo-1.18.4-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "cairo",
+      "repository": "main",
+      "sha256": "b831b0eb3c5f122d6dcea541ac4fd4d832bf44cb8a4a6520f8ccb87aa058b480",
+      "size": 529119,
+      "version": "1.18.4-r1"
+    },
+    {
+      "filename": "cairo-gobject-1.18.4-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "cairo-gobject",
+      "repository": "main",
+      "sha256": "415e8e109014c0172628a252a485fd5305455faf5a63270400e994a406af80be",
+      "size": 9569,
+      "version": "1.18.4-r1"
+    },
+    {
+      "filename": "cups-libs-2.4.19-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "cups-libs",
+      "repository": "main",
+      "sha256": "9c9b77f4617e134a27d6233609cd89df2a339c33ffb9262603394261cf3d5f30",
+      "size": 238652,
+      "version": "2.4.19-r0"
+    },
+    {
+      "filename": "curl-8.20.0-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "curl",
+      "repository": "main",
+      "sha256": "d817e193bd6494c5c65f3ee8612aa2e0fd2855bd7e17e5b6ca7bb9e446141830",
+      "size": 180604,
+      "version": "8.20.0-r1"
+    },
+    {
+      "filename": "dbus-1.16.2-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "dbus",
+      "repository": "main",
+      "sha256": "3495a05282b74e354119f7aea2c03e6341dd89cf94f227d90cc7fb14fdc4d6ee",
+      "size": 124522,
+      "version": "1.16.2-r2"
+    },
+    {
+      "filename": "dbus-libs-1.16.2-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "dbus-libs",
+      "repository": "main",
+      "sha256": "8abe1a4e32197166131854982da876300a404f6e0059203ac71488c6f26de394",
+      "size": 134220,
+      "version": "1.16.2-r2"
+    },
+    {
+      "filename": "dbus-x11-1.16.2-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "dbus-x11",
+      "repository": "main",
+      "sha256": "6bfbaf64fab394d74ca969d3398bcd2823736244dfdf1c7702349841efb57199",
+      "size": 11966,
+      "version": "1.16.2-r2"
+    },
+    {
+      "filename": "encodings-1.1.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "encodings",
+      "repository": "main",
+      "sha256": "c6b36866fabb5e99a3e2447bc1e072e7d40d561a89c9c31a2991fa05ac568fdf",
+      "size": 588298,
+      "version": "1.1.0-r0"
+    },
+    {
+      "filename": "ffmpeg7-libavcodec-7.1.3-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "ffmpeg7-libavcodec",
+      "repository": "community",
+      "sha256": "87197113a7c9dcb565d26fb7dc2d37ecf292e5aed754d4fdaffc9eac20c78c83",
+      "size": 7076627,
+      "version": "7.1.3-r2"
+    },
+    {
+      "filename": "ffmpeg7-libavutil-7.1.3-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "ffmpeg7-libavutil",
+      "repository": "community",
+      "sha256": "cf32ab7eae5b234af54ebc39b69f2191ec94c986a3299b583235253e621ff9af",
+      "size": 432913,
+      "version": "7.1.3-r2"
+    },
+    {
+      "filename": "ffmpeg7-libswresample-7.1.3-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "ffmpeg7-libswresample",
+      "repository": "community",
+      "sha256": "88dfc3d8963bf9222f146910e2a435c7b4e6e7425e5744c0806772412ca365bd",
+      "size": 48999,
+      "version": "7.1.3-r2"
+    },
+    {
+      "filename": "firefox-esr-140.12.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "firefox-esr",
+      "repository": "community",
+      "sha256": "b7b4611793c4fa6e68f2c41d3397a23a68a2acaefec7acf7518e717498811ce9",
+      "size": 92051673,
+      "version": "140.12.0-r0"
+    },
+    {
+      "filename": "font-alias-1.0.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "font-alias",
+      "repository": "main",
+      "sha256": "a6830a067c32469a0075d8cc78303a8c6383a54c92bdaf27539414ce73d5f2bb",
+      "size": 3950,
+      "version": "1.0.6-r0"
+    },
+    {
+      "filename": "font-cursor-misc-1.0.4-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "font-cursor-misc",
+      "repository": "main",
+      "sha256": "3c5923511532dde0eebda21dd1c40f72551749b6bb8bab9de590ab46b55d3738",
+      "size": 7016,
+      "version": "1.0.4-r1"
+    },
+    {
+      "filename": "font-dejavu-2.37-r6.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "font-dejavu",
+      "repository": "main",
+      "sha256": "433cc9a92f62e3d556f74276d8ff3fbcc31ff8b3d3c083e371d96dead698a596",
+      "size": 5394034,
+      "version": "2.37-r6"
+    },
+    {
+      "filename": "font-misc-misc-1.1.3-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "font-misc-misc",
+      "repository": "main",
+      "sha256": "8a5289c64b0a8e4787dbefb6b82a1ce2fbacef66b961b7b2ff06d8dd8f3d1467",
+      "size": 3688047,
+      "version": "1.1.3-r1"
+    },
+    {
+      "filename": "fontconfig-2.17.1-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "fontconfig",
+      "repository": "main",
+      "sha256": "d47bcac8d72fd54bb1c957ea939b249f296672b8eb3b2d65ec46ab179c175ee5",
+      "size": 168462,
+      "version": "2.17.1-r1"
+    },
+    {
+      "filename": "freetype-2.14.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "freetype",
+      "repository": "main",
+      "sha256": "fe8a637fe94ba2d1a8e7d2db8ee5cad237363c4211ff08d542a591cb093e806e",
+      "size": 354896,
+      "version": "2.14.3-r0"
+    },
+    {
+      "filename": "fribidi-1.0.16-r3.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "fribidi",
+      "repository": "main",
+      "sha256": "6031a1025e70fd13bebadc7b79514192ad43db5639fcebd7061d53a7b5cb8cca",
+      "size": 31998,
+      "version": "1.0.16-r3"
+    },
+    {
+      "filename": "gdbm-1.26-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "gdbm",
+      "repository": "main",
+      "sha256": "7744f4fe12bd6e81744e79bf8fd09ead3e8edd54c86872f8d7ee8375329e1a65",
+      "size": 36178,
+      "version": "1.26-r0"
+    },
+    {
+      "filename": "gdk-pixbuf-2.44.6-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "gdk-pixbuf",
+      "repository": "community",
+      "sha256": "8862ad929bd446556881a83d469f2ae1f8e5f02b5c78e0d426d153571e20b156",
+      "size": 83322,
+      "version": "2.44.6-r0"
+    },
+    {
+      "filename": "giflib-5.2.2-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "giflib",
+      "repository": "main",
+      "sha256": "a0d61664b36f91523af89d94095d2ea068fe2c14028f58c56d87ad8f0b693e39",
+      "size": 16150,
+      "version": "5.2.2-r1"
+    },
+    {
+      "filename": "git-2.54.0-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "git",
+      "repository": "main",
+      "sha256": "ea4728fd0c3598905aee5bb654e81122830f17a5e0c80a8b5abc18738b4ce062",
+      "size": 3568880,
+      "version": "2.54.0-r0"
+    },
+    {
+      "filename": "glib-2.88.1-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "glib",
+      "repository": "main",
+      "sha256": "b8b89f8244c25527a72621e98025c4cb59383da3d58cf9801c01f30fc1106441",
+      "size": 2211213,
+      "version": "2.88.1-r1"
+    },
+    {
+      "filename": "glycin-svg-2.1.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "glycin-svg",
+      "repository": "community",
+      "sha256": "6993969795526d0f86b0c203a69fbe26e2b6b36cd1a0b6a770d0a66581c1585a",
+      "size": 713584,
+      "version": "2.1.0-r0"
+    },
+    {
+      "filename": "gmp-6.3.0-r4.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "gmp",
+      "repository": "main",
+      "sha256": "dd648f11e9063e1ada8c6d779cc394efa7f920311c9aa538d42ee5dca681de5d",
+      "size": 200301,
+      "version": "6.3.0-r4"
+    },
+    {
+      "filename": "gnutls-3.8.13-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "gnutls",
+      "repository": "main",
+      "sha256": "51f459ea0f7868bb30541817b7d253aaff337ebe529475bd23765f9c22f5a314",
+      "size": 903411,
+      "version": "3.8.13-r0"
+    },
+    {
+      "filename": "gobject-introspection-1.86.0-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "gobject-introspection",
+      "repository": "main",
+      "sha256": "1375532aced95c357c3fdc4d9ad7325e01c8a1cb5fe2fec810eef5e2c664343d",
+      "size": 96761,
+      "version": "1.86.0-r1"
+    },
+    {
+      "filename": "graphite2-1.3.14-r6.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "graphite2",
+      "repository": "main",
+      "sha256": "e9c3aa6342012690ba66061869d26c8ec44af0f720f426845a84f784a84f2ccd",
+      "size": 66277,
+      "version": "1.3.14-r6"
+    },
+    {
+      "filename": "grep-3.12-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "grep",
+      "repository": "main",
+      "sha256": "f807583381e3b3f6f3647ce59fbd78c4b61a11b06ce3d8b343ee3e556359b294",
+      "size": 89980,
+      "version": "3.12-r0"
+    },
+    {
+      "filename": "gtk+3.0-3.24.52-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "gtk+3.0",
+      "repository": "community",
+      "sha256": "68e28ac71412bbe30b8383ee82d77a06464d5c7fe6f2c97bfaa5ba86085ca8e0",
+      "size": 4278120,
+      "version": "3.24.52-r0"
+    },
+    {
+      "filename": "gvim-9.2.0680-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "gvim",
+      "repository": "community",
+      "sha256": "5134991db2e5ed9bfff48aac6e7aa3caa51f2ecd94155895b486db030117c261",
+      "size": 1923104,
+      "version": "9.2.0680-r0"
+    },
+    {
+      "filename": "gzip-1.14-r2.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "gzip",
+      "repository": "main",
+      "sha256": "967cd65e6267ff9585fd7318aeff9084cf82f5903b03459069330133de32da6e",
+      "size": 63723,
+      "version": "1.14-r2"
+    },
+    {
+      "filename": "harfbuzz-13.2.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "harfbuzz",
+      "repository": "main",
+      "sha256": "14666405557c20caf9a40466b7729d52afd8bdb14298452a1905797252dd7c58",
+      "size": 806850,
+      "version": "13.2.1-r0"
+    },
+    {
+      "filename": "htop-3.5.1-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "htop",
+      "repository": "main",
+      "sha256": "c9d21db005161f4965465d672b457b0ff7014ed0f3ccdd06e16242bceae9005d",
+      "size": 146796,
+      "version": "3.5.1-r1"
+    },
+    {
+      "filename": "hwdata-pci-0.408-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "hwdata-pci",
+      "repository": "main",
+      "sha256": "acb24de3999a93065d8bd8118d12f02974164473d8880e5b5385d18d2e95649b",
+      "size": 369104,
+      "version": "0.408-r0"
+    },
+    {
+      "filename": "icu-data-full-78.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "icu-data-full",
+      "repository": "main",
+      "sha256": "d30384965237dcd0ef1d44e3cc82edb066358c6c1024282eff23d4ec83a31487",
+      "size": 12731023,
+      "version": "78.1-r0"
+    },
+    {
+      "filename": "icu-libs-78.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "icu-libs",
+      "repository": "main",
+      "sha256": "265077552b3e6e164eef0b855df9736940ea264c4bc1e1408d33130aed81803f",
+      "size": 2098270,
+      "version": "78.1-r0"
+    },
+    {
+      "filename": "ifupdown-ng-0.13.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "ifupdown-ng",
+      "repository": "main",
+      "sha256": "b61e5bd63992c08bb80e42cb5f7965004cb051191583f47ebf47bc4e8ddd386a",
+      "size": 68145,
+      "version": "0.13.0-r0"
+    },
+    {
+      "filename": "imlib2-1.12.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "imlib2",
+      "repository": "community",
+      "sha256": "71d2c809abe0d109a50bcf3fcfb3157ad36501f0b77790850586bfae3df6667d",
+      "size": 558729,
+      "version": "1.12.6-r0"
+    },
+    {
+      "filename": "lame-libs-3.100-r5.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "lame-libs",
+      "repository": "main",
+      "sha256": "3306685e15c0ad1f6521ed75d9b830631ba1e466da9c54cb5dae2562fe0a978e",
+      "size": 132072,
+      "version": "3.100-r5"
+    },
+    {
+      "filename": "lcms2-2.19-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "lcms2",
+      "repository": "main",
+      "sha256": "c8dc893582757b55d5b6cc5381dc12b82bae570cd9bd067d6fea583751a0f376",
+      "size": 161216,
+      "version": "2.19-r0"
+    },
+    {
+      "filename": "less-702-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "less",
+      "repository": "main",
+      "sha256": "56fdad28f71c0a5eb4bcab90678165e55b40d7771e6013fd6e80457e7e9e7208",
+      "size": 113676,
+      "version": "702-r0"
+    },
+    {
+      "filename": "libapk-3.0.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libapk",
+      "repository": "main",
+      "sha256": "78a8eb757c734d1f61019329a957cff2577109de82f8072494df2e6425040a78",
+      "size": 143971,
+      "version": "3.0.6-r0"
+    },
+    {
+      "filename": "libatk-1.0-2.60.4-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libatk-1.0",
+      "repository": "main",
+      "sha256": "da4630e520aa3af94f6ad10c32b0a089830d022257a0bd1df658e06ed15a1d3d",
+      "size": 70828,
+      "version": "2.60.4-r0"
+    },
+    {
+      "filename": "libatk-bridge-2.0-2.60.4-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libatk-bridge-2.0",
+      "repository": "main",
+      "sha256": "e12f5a464339870712cc725a27eef47475a8b4518ef6624f213fac8ea0163580",
+      "size": 71045,
+      "version": "2.60.4-r0"
+    },
+    {
+      "filename": "libblkid-2.42.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libblkid",
+      "repository": "main",
+      "sha256": "372f428a7b09252626e868ee6a5edeff12e6b4f7fc37d878f9c976b8a30137b6",
+      "size": 103124,
+      "version": "2.42.1-r0"
+    },
+    {
+      "filename": "libbsd-0.12.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libbsd",
+      "repository": "main",
+      "sha256": "2a1096151b5c7b6bc73f93d72e195223ebf341e35ca04ec78cb9e34e38a2669f",
+      "size": 32787,
+      "version": "0.12.2-r0"
+    },
+    {
+      "filename": "libbz2-1.0.8-r6.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libbz2",
+      "repository": "main",
+      "sha256": "636ace113aaf002da7b28dfb9e99e0d04df466cc177ffa27f68c4e6ebbb4ce2c",
+      "size": 36459,
+      "version": "1.0.8-r6"
+    },
+    {
+      "filename": "libcap2-2.78-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libcap2",
+      "repository": "main",
+      "sha256": "aa62a597eea39d4b5b0b887c96c1d37506545e73a85cab31cbe69fe55db378f6",
+      "size": 23250,
+      "version": "2.78-r0"
+    },
+    {
+      "filename": "libcrypto3-3.5.7-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libcrypto3",
+      "repository": "main",
+      "sha256": "633c889b769229bb1ac7b5afd1be2c30652911f9a7f5b38d75ea7a7062a7b29d",
+      "size": 1784243,
+      "version": "3.5.7-r0"
+    },
+    {
+      "filename": "libcurl-8.20.0-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "libcurl",
+      "repository": "main",
+      "sha256": "d784d3121a5c2bfb620f32bc89f5ad02d8d0fb987fd2728d9e42e423813f7b7c",
+      "size": 357961,
+      "version": "8.20.0-r1"
+    },
+    {
+      "filename": "libdav1d-1.5.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libdav1d",
+      "repository": "main",
+      "sha256": "3bb2676cebfd66877c2662947cc817b8863b07ae040106f2693ac8289982192e",
+      "size": 442362,
+      "version": "1.5.3-r0"
+    },
+    {
+      "filename": "libde265-1.0.18-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libde265",
+      "repository": "main",
+      "sha256": "0c4160c6953560ee8038a8c67fdb83bc8e8c1c842a195a45b0d28dde09273a86",
+      "size": 342577,
+      "version": "1.0.18-r0"
+    },
+    {
+      "filename": "libdrm-2.4.134-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libdrm",
+      "repository": "main",
+      "sha256": "79cd76079c47bfcd8655cbf85c41734bdc8c79533c82497e78db90d54811851c",
+      "size": 227939,
+      "version": "2.4.134-r0"
+    },
+    {
+      "filename": "libeconf-0.8.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libeconf",
+      "repository": "main",
+      "sha256": "bb358db18f9caf33cac36e03f17371ead7bd420a3e39594e594ecb94a585cf1d",
+      "size": 26720,
+      "version": "0.8.3-r0"
+    },
+    {
+      "filename": "libelf-0.195-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libelf",
+      "repository": "main",
+      "sha256": "1c33af51635927f3890aa8edd4fe996b35a9fc999800923d4526c788b6c571da",
+      "size": 48247,
+      "version": "0.195-r0"
+    },
+    {
+      "filename": "libepoxy-1.5.10-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libepoxy",
+      "repository": "main",
+      "sha256": "eeb8d651fd7baa9fed954bfc4a27c4bb7a06a734ce5929c30f0762a388c2cec8",
+      "size": 260821,
+      "version": "1.5.10-r1"
+    },
+    {
+      "filename": "libevdev-1.13.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libevdev",
+      "repository": "community",
+      "sha256": "d15af60a31ad9bf29afa563140fad27c0ae4f8905e2153e492b3cbc457578088",
+      "size": 27592,
+      "version": "1.13.6-r0"
+    },
+    {
+      "filename": "libevent-2.1.12-r9.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libevent",
+      "repository": "main",
+      "sha256": "2e03c85cae44916e2493fd47d111724a3c8cca670d22af0c3c77aa4eb5b843f2",
+      "size": 298344,
+      "version": "2.1.12-r9"
+    },
+    {
+      "filename": "libexpat-2.8.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libexpat",
+      "repository": "main",
+      "sha256": "c954ca35db5e25a44ac8876fe401c8e73489142c2e6d2563d5e5aa68701ac45f",
+      "size": 62191,
+      "version": "2.8.1-r0"
+    },
+    {
+      "filename": "libffi-3.5.2-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libffi",
+      "repository": "main",
+      "sha256": "b1c7cbf073a96066a84eb28fb15071e20838320f860df83d6609fa50af21cf97",
+      "size": 16064,
+      "version": "3.5.2-r1"
+    },
+    {
+      "filename": "libfontenc-1.1.9-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libfontenc",
+      "repository": "main",
+      "sha256": "102e42009b70ba6a04805e32fdc8fe680915ca4b400ec8de98556274853f0770",
+      "size": 11797,
+      "version": "1.1.9-r0"
+    },
+    {
+      "filename": "libgcc-15.2.0-r5.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libgcc",
+      "repository": "main",
+      "sha256": "8c7854c5671b7bec32768d47cb4086b3e78b9ff347a24cad5cf42e8c6e9b9551",
+      "size": 99881,
+      "version": "15.2.0-r5"
+    },
+    {
+      "filename": "libglycin-2.1.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libglycin",
+      "repository": "community",
+      "sha256": "bf1fd6634c4d85030f6613e2afe3237c0609b459bd95c5b2a9c4dd2b5cc10d9f",
+      "size": 1269752,
+      "version": "2.1.0-r0"
+    },
+    {
+      "filename": "libgomp-15.2.0-r5.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libgomp",
+      "repository": "main",
+      "sha256": "c21622223af8aed3ee6c7fe94e245fd01c2d7587e23cf171a7d0fd1d08dd7698",
+      "size": 162524,
+      "version": "15.2.0-r5"
+    },
+    {
+      "filename": "libheif-1.23.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libheif",
+      "repository": "community",
+      "sha256": "502c77567bbbc751302f4a7f5f9a0b3570807438565d076e7886f87878401200",
+      "size": 813786,
+      "version": "1.23.0-r0"
+    },
+    {
+      "filename": "libheif-dav1d-1.23.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libheif-dav1d",
+      "repository": "community",
+      "sha256": "388debcad090c3266d437861af4c1e72c53c229642ee8e12e4b1949c3f0d764c",
+      "size": 9735,
+      "version": "1.23.0-r0"
+    },
+    {
+      "filename": "libheif-libde265-1.23.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libheif-libde265",
+      "repository": "community",
+      "sha256": "f8024acafff6ad2fe6b9827ec7adad126c1ff056007e2ac8a2697fb222bbc7fa",
+      "size": 8414,
+      "version": "1.23.0-r0"
+    },
+    {
+      "filename": "libhwy-1.3.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libhwy",
+      "repository": "community",
+      "sha256": "07558a5c510ca8b56fa427db0838c976909f90b4b0f89e3c00c726e29ec5c009",
+      "size": 29244,
+      "version": "1.3.0-r0"
+    },
+    {
+      "filename": "libice-1.1.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libice",
+      "repository": "main",
+      "sha256": "3d41af5601afab8b8414d0ebc98da30ca65c8986866073b7158f1a59631cb3cb",
+      "size": 40477,
+      "version": "1.1.2-r0"
+    },
+    {
+      "filename": "libid3tag-0.16.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libid3tag",
+      "repository": "main",
+      "sha256": "6d9adb103f239f0eace70598e83f99418d0128ef887523f63a4cd86779b9c5de",
+      "size": 29895,
+      "version": "0.16.3-r0"
+    },
+    {
+      "filename": "libidn2-2.3.8-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libidn2",
+      "repository": "main",
+      "sha256": "cae318b487162b91342504a6e85c3d6381b83988f5904a1099d212184d1a8afd",
+      "size": 105123,
+      "version": "2.3.8-r0"
+    },
+    {
+      "filename": "libinput-libs-1.31.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libinput-libs",
+      "repository": "community",
+      "sha256": "8b00127cdee50576f4c199495c1fe2bf5b2f77b93de5f0dd4e7c0b3f12aa235d",
+      "size": 156650,
+      "version": "1.31.3-r0"
+    },
+    {
+      "filename": "libintl-1.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libintl",
+      "repository": "main",
+      "sha256": "30a0b7afca0cfbffe7d9a76de7cbd2f8a106c5eac5797893839d6648f3dbc294",
+      "size": 39249,
+      "version": "1.0-r0"
+    },
+    {
+      "filename": "libjpeg-turbo-3.1.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libjpeg-turbo",
+      "repository": "main",
+      "sha256": "c8f24742ea53651a2e07e852c096cd25522c0c58d1ac3125ede351613a7a0ba7",
+      "size": 245922,
+      "version": "3.1.3-r0"
+    },
+    {
+      "filename": "libjxl-0.11.2-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libjxl",
+      "repository": "community",
+      "sha256": "6bd9c48d6d7154af81fc0fd1203c301ba4538387a4382296b83213e58d97c87c",
+      "size": 1300920,
+      "version": "0.11.2-r1"
+    },
+    {
+      "filename": "libmd-1.2.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libmd",
+      "repository": "main",
+      "sha256": "e06620533ad3b4fc5f409763dc182e89f888d6bbc3419897a3dca8fe311b2af7",
+      "size": 29650,
+      "version": "1.2.0-r0"
+    },
+    {
+      "filename": "libmount-2.42.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libmount",
+      "repository": "main",
+      "sha256": "0070dcad6eda60ec17b51028b7e199841a5beea73063f055d8f82ca4f97f53bd",
+      "size": 129099,
+      "version": "2.42.1-r0"
+    },
+    {
+      "filename": "libncursesw-6.6_p20260516-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "libncursesw",
+      "repository": "main",
+      "sha256": "49a048c29a93046b3fc5e72a21bb55ef537558d026f1064a42d25f42f19a90e9",
+      "size": 162671,
+      "version": "6.6_p20260516-r0"
+    },
+    {
+      "filename": "libogg-1.3.6-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libogg",
+      "repository": "main",
+      "sha256": "9ac8655a47b4433b3fd9da2adb5d4a3e6e0c048c6b0d569df56c2456d54cce53",
+      "size": 22175,
+      "version": "1.3.6-r0"
+    },
+    {
+      "filename": "libpanelw-6.6_p20260516-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "libpanelw",
+      "repository": "main",
+      "sha256": "8f591e6c968ef4a6e388b02503a895c15716c5b92fc4b39f2beaae10b77939c6",
+      "size": 6003,
+      "version": "6.6_p20260516-r0"
+    },
+    {
+      "filename": "libpciaccess-0.19-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libpciaccess",
+      "repository": "main",
+      "sha256": "44656dd0be05a33b404c6d0c482360859ac5f7c721b63c06d6f4a3ce1b83f122",
+      "size": 16145,
+      "version": "0.19-r0"
+    },
+    {
+      "filename": "libpng-1.6.58-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libpng",
+      "repository": "main",
+      "sha256": "b0bb46ef3da6aa416e7894e00d61ee8f6f816434b0ddad435a8871d413fa25c0",
+      "size": 98745,
+      "version": "1.6.58-r1"
+    },
+    {
+      "filename": "libproc2-4.0.6-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "libproc2",
+      "repository": "main",
+      "sha256": "3cf48ceec07275f14a374e162859e235ce4ab5523e43cf683f57d543e79faa8a",
+      "size": 56543,
+      "version": "4.0.6-r0"
+    },
+    {
+      "filename": "libpsl-0.21.5-r3.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "libpsl",
+      "repository": "main",
+      "sha256": "b1877322d6a3e54c156e7f838e03dfaf723dae86859508b63fc8193961b9022d",
+      "size": 55193,
+      "version": "0.21.5-r3"
+    },
+    {
+      "filename": "librsvg-2.62.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "librsvg",
+      "repository": "community",
+      "sha256": "6ca5fafa4c67490a9ea89255dd2a33108ac373bacbc6fb625a2f7b3ef18feacd",
+      "size": 1650957,
+      "version": "2.62.3-r0"
+    },
+    {
+      "filename": "libseccomp-2.6.0-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libseccomp",
+      "repository": "main",
+      "sha256": "9527114a65abe4fc92e78f30b569999ce2dfe07da045c0605e0337297c4b25b8",
+      "size": 52409,
+      "version": "2.6.0-r2"
+    },
+    {
+      "filename": "libsharpyuv-1.6.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libsharpyuv",
+      "repository": "main",
+      "sha256": "e862f22476571861052664decd172e7f375040b93a1b9b9ba436c9864b2b7c0c",
+      "size": 12976,
+      "version": "1.6.0-r0"
+    },
+    {
+      "filename": "libsm-1.2.6-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libsm",
+      "repository": "main",
+      "sha256": "bb7910c16fab5a637b16432c83f436a0af1752e0b40f46ede7e26d1541b14c01",
+      "size": 14102,
+      "version": "1.2.6-r0"
+    },
+    {
+      "filename": "libssl3-3.5.7-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libssl3",
+      "repository": "main",
+      "sha256": "dd76ad2403d8a5419dbbdb76abb24a6b045795b3c2c61c525a5bd6b6afce52cc",
+      "size": 397192,
+      "version": "3.5.7-r0"
+    },
+    {
+      "filename": "libstdc++-15.2.0-r5.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libstdc++",
+      "repository": "main",
+      "sha256": "84bcdc89b255412fdf4ea3284be1953560ba5567e6ca972f356452c583f10de8",
+      "size": 1052063,
+      "version": "15.2.0-r5"
+    },
+    {
+      "filename": "libtasn1-4.21.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libtasn1",
+      "repository": "main",
+      "sha256": "4bd3422a495e592e6ec52f278b4e1de90dcfba998f1f01c039a94a4fcc188bf6",
+      "size": 34623,
+      "version": "4.21.0-r0"
+    },
+    {
+      "filename": "libtheora-1.2.0-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libtheora",
+      "repository": "main",
+      "sha256": "0a7c1febb81dbd47ef98ddcf0ac87090a269eeb18f2fca03535aaf3ee303b105",
+      "size": 374002,
+      "version": "1.2.0-r1"
+    },
+    {
+      "filename": "libudev-zero-1.0.4-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libudev-zero",
+      "repository": "community",
+      "sha256": "7e936d72be2a8838ac51529d1490dc0cb59642a5306c79fb23468988e2d093a8",
+      "size": 12818,
+      "version": "1.0.4-r0"
+    },
+    {
+      "filename": "libunistring-1.4.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libunistring",
+      "repository": "main",
+      "sha256": "5d7e61eea90b783075bb995f3346165f25fd0fc2f1b5975e9d0ec70ade3c8c34",
+      "size": 742355,
+      "version": "1.4.2-r0"
+    },
+    {
+      "filename": "libuuid-2.42.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libuuid",
+      "repository": "main",
+      "sha256": "8bada9cf0c932df700a111d27cb94ef50d08408624662a656643e5ce066af1b4",
+      "size": 16190,
+      "version": "2.42.1-r0"
+    },
+    {
+      "filename": "libva-2.23.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libva",
+      "repository": "main",
+      "sha256": "5ead7e4cac6b43f8d2737a261f847300d98ff2a6d8ceb6f7e39996784871c549",
+      "size": 84804,
+      "version": "2.23.0-r0"
+    },
+    {
+      "filename": "libvdpau-1.5-r4.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libvdpau",
+      "repository": "main",
+      "sha256": "b51402e957bda1fba9584ae11ed40c67f0b6a0bc1e3c24227d81113f803ecfa0",
+      "size": 22800,
+      "version": "1.5-r4"
+    },
+    {
+      "filename": "libvorbis-1.3.7-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libvorbis",
+      "repository": "main",
+      "sha256": "9a5046717af00cea0cd7d7af2d3d5a0b21e180cf047458e7ca8398fc7f15ec4f",
+      "size": 186551,
+      "version": "1.3.7-r2"
+    },
+    {
+      "filename": "libvpx-1.15.2-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libvpx",
+      "repository": "community",
+      "sha256": "54b8811872e4651b1a71d944887dbf7e91ecaf1780709a01b6c318ee450a193a",
+      "size": 1627543,
+      "version": "1.15.2-r1"
+    },
+    {
+      "filename": "libwebp-1.6.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libwebp",
+      "repository": "main",
+      "sha256": "3120388b0aa9bbe75de26c7bc6b5314c113514899a0095c2cfc1a1897c6d159b",
+      "size": 286658,
+      "version": "1.6.0-r0"
+    },
+    {
+      "filename": "libwebpdemux-1.6.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libwebpdemux",
+      "repository": "main",
+      "sha256": "40c2489f54f096b5a76995f287c956bc32e81cb6b7bf796efc55d2e58edaa6c4",
+      "size": 10309,
+      "version": "1.6.0-r0"
+    },
+    {
+      "filename": "libwebpmux-1.6.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libwebpmux",
+      "repository": "main",
+      "sha256": "5350a68d2d7a019cfc5c5b4ead8792a7106580005dcbcbcb28fc3c727abfa9ae",
+      "size": 22737,
+      "version": "1.6.0-r0"
+    },
+    {
+      "filename": "libx11-1.8.13-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libx11",
+      "repository": "main",
+      "sha256": "1c0db2656e212b94d4e88854290172e56adf47bfc0e9dca3c2a61eec8d896237",
+      "size": 874562,
+      "version": "1.8.13-r0"
+    },
+    {
+      "filename": "libxau-1.0.12-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxau",
+      "repository": "main",
+      "sha256": "692c4b54626ecf0d1142c47226ac95c025db9dbe50f095cf8c05398110370264",
+      "size": 5858,
+      "version": "1.0.12-r0"
+    },
+    {
+      "filename": "libxcb-1.17.0-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxcb",
+      "repository": "main",
+      "sha256": "ff6cff640c4754011f674f4100fb6da3bfc48271e29b80e18461116a3c4e9f6a",
+      "size": 256405,
+      "version": "1.17.0-r2"
+    },
+    {
+      "filename": "libxcomposite-0.4.7-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxcomposite",
+      "repository": "main",
+      "sha256": "f9755900069f91b3bfd47b5ca5135de4ee21bf3d6901e3590dfffe216552c72c",
+      "size": 4993,
+      "version": "0.4.7-r0"
+    },
+    {
+      "filename": "libxcursor-1.2.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxcursor",
+      "repository": "main",
+      "sha256": "61650e9c18b721cdbdb9d5030a07883cb0b7fa00dfa47bbd862aceca8c37e46c",
+      "size": 20105,
+      "version": "1.2.3-r0"
+    },
+    {
+      "filename": "libxcvt-0.1.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxcvt",
+      "repository": "community",
+      "sha256": "bc4ff559606cf7be507ff3e516bcf8c9a851e4f417ab32e5eca848dd4edf52b8",
+      "size": 7572,
+      "version": "0.1.3-r0"
+    },
+    {
+      "filename": "libxdamage-1.1.7-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxdamage",
+      "repository": "main",
+      "sha256": "1482e436595af820a9ef1458a51026dd3e56f9e001fd1fdf719345be3492b792",
+      "size": 5106,
+      "version": "1.1.7-r0"
+    },
+    {
+      "filename": "libxdmcp-1.1.5-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxdmcp",
+      "repository": "main",
+      "sha256": "c4dc1b7c78a16bcde0e83f7b8ac569bfbfb4faddde77b49ca2c8226fd7459c29",
+      "size": 9879,
+      "version": "1.1.5-r1"
+    },
+    {
+      "filename": "libxext-1.3.7-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxext",
+      "repository": "main",
+      "sha256": "2cd6c2261eb3f267d5f575dfb5f96eaccc88b43766f4b21305f8d98bf009c0d4",
+      "size": 26767,
+      "version": "1.3.7-r0"
+    },
+    {
+      "filename": "libxfixes-6.0.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxfixes",
+      "repository": "main",
+      "sha256": "2aaddbd9a1145510907e438f4c159ef8fb6ffd10dce1508b81482e2da39bac7b",
+      "size": 9000,
+      "version": "6.0.2-r0"
+    },
+    {
+      "filename": "libxfont2-2.0.7-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxfont2",
+      "repository": "community",
+      "sha256": "78a043735e3adf621d42a2f877025ed56d3cab5b90476e1365d099e01235c38a",
+      "size": 103732,
+      "version": "2.0.7-r0"
+    },
+    {
+      "filename": "libxft-2.3.9-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxft",
+      "repository": "main",
+      "sha256": "be66f8a5ef8422c0378bcc3b4b1f758100a45ef59330109ba9576bd202b73e0a",
+      "size": 38316,
+      "version": "2.3.9-r0"
+    },
+    {
+      "filename": "libxi-1.8.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxi",
+      "repository": "main",
+      "sha256": "081ec0aa91131cef4b245a831ad221956c4447adfbb61ce3af918891d60ff6f0",
+      "size": 29175,
+      "version": "1.8.3-r0"
+    },
+    {
+      "filename": "libxinerama-1.1.6-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxinerama",
+      "repository": "main",
+      "sha256": "d2f01a8aa151ab39415d9aba8d6aa3e7654a23d1e1f1da4b83d21eab251bd816",
+      "size": 4871,
+      "version": "1.1.6-r0"
+    },
+    {
+      "filename": "libxkbcommon-1.13.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxkbcommon",
+      "repository": "main",
+      "sha256": "343a2d3e76dd018c15202e2cc7d2cfbb1f3a035b585772157a70e2a9ade1045b",
+      "size": 163261,
+      "version": "1.13.1-r0"
+    },
+    {
+      "filename": "libxkbfile-1.2.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxkbfile",
+      "repository": "main",
+      "sha256": "2d295006596072b2fe3c6fca4c34201c6d9e40a1a32b95fc02e0255e9c7349b0",
+      "size": 59077,
+      "version": "1.2.0-r0"
+    },
+    {
+      "filename": "libxml2-2.13.9-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxml2",
+      "repository": "main",
+      "sha256": "3983f4d0d8439378b113e50b1699b20dea20ff6bf4f555b33af22ff04df5bde5",
+      "size": 499479,
+      "version": "2.13.9-r2"
+    },
+    {
+      "filename": "libxmu-1.3.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxmu",
+      "repository": "main",
+      "sha256": "e1f8188f842c592abafb6a6ccc36827073864b4a2d0cbb007d9d5c962767cc6e",
+      "size": 47901,
+      "version": "1.3.1-r0"
+    },
+    {
+      "filename": "libxrandr-1.5.5-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxrandr",
+      "repository": "main",
+      "sha256": "8b9dc69063f3104a1e1ed35c4a464902bce68e16d5b4567b930f045749004ca7",
+      "size": 17143,
+      "version": "1.5.5-r0"
+    },
+    {
+      "filename": "libxrender-0.9.12-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxrender",
+      "repository": "main",
+      "sha256": "1771f37bb66cf13a986effa9ed04c01716508ec86780cb4ba23c9a9b60bca186",
+      "size": 16899,
+      "version": "0.9.12-r0"
+    },
+    {
+      "filename": "libxshmfence-1.3.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxshmfence",
+      "repository": "main",
+      "sha256": "fe0798e1dd4cd872fa1353c4fb93375c6563d3fb32934524296b14050ab6ac57",
+      "size": 4243,
+      "version": "1.3.3-r0"
+    },
+    {
+      "filename": "libxt-1.3.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "libxt",
+      "repository": "main",
+      "sha256": "af97349acef195d8abbdc051d08959b71140ebff194e780abdda0e3a50eec98d",
+      "size": 151321,
+      "version": "1.3.1-r0"
+    },
+    {
+      "filename": "libxxf86vm-1.1.7-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "libxxf86vm",
+      "repository": "main",
+      "sha256": "21ccd17d3887d7e17a25fe552a401ea909c6a14b4b7996d34fa22491e0f29f2b",
+      "size": 8441,
+      "version": "1.1.7-r0"
+    },
+    {
+      "filename": "linux-pam-1.7.1-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "linux-pam",
+      "repository": "main",
+      "sha256": "c6b5711e5be62446fc1f5d3479cc4134c3160f765a6fcfe1c0bdb8a95c6958f2",
+      "size": 212316,
+      "version": "1.7.1-r2"
+    },
+    {
+      "filename": "llvm22-libs-22.1.3-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "llvm22-libs",
+      "repository": "main",
+      "sha256": "92f23b1f7245171d1145e31d2fbdd11ba432091d1ef7c135db51afd54b918a44",
+      "size": 72966063,
+      "version": "22.1.3-r0"
+    },
+    {
+      "filename": "lsof-4.99.6-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "lsof",
+      "repository": "main",
+      "sha256": "b7c93ae1061d786584f93f0e4de25647719c05bc145d675cffd2e4ddcdd53019",
+      "size": 89265,
+      "version": "4.99.6-r0"
+    },
+    {
+      "filename": "mcookie-2.42.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mcookie",
+      "repository": "main",
+      "sha256": "9c0a1d83df0844ce9dd820e96b1319561d11409489b06a38e114c06dd4598c2b",
+      "size": 9985,
+      "version": "2.42.1-r0"
+    },
+    {
+      "filename": "mdev-conf-4.10-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mdev-conf",
+      "repository": "main",
+      "sha256": "7dce47cf7206ab359d02fc5646660e636c2a61020db8a28b7552baefa4f51194",
+      "size": 5414,
+      "version": "4.10-r0"
+    },
+    {
+      "filename": "mesa-26.1.1-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mesa",
+      "repository": "main",
+      "sha256": "80caebd33c8ccddf211b210fc6ee5bf7cf096038f599a174d3a8cbd9fb04a660",
+      "size": 14616605,
+      "version": "26.1.1-r1"
+    },
+    {
+      "filename": "mesa-egl-26.1.1-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mesa-egl",
+      "repository": "main",
+      "sha256": "f8a4f26e39eeaba27efbad1f02cf81b11bedee2b193700b16df0b9212701b2e9",
+      "size": 143509,
+      "version": "26.1.1-r1"
+    },
+    {
+      "filename": "mesa-gbm-26.1.1-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mesa-gbm",
+      "repository": "main",
+      "sha256": "8d4eb08916d5eb6739ee49e0741f26777c295bc07737c0d265a8e24f684c4e01",
+      "size": 7899,
+      "version": "26.1.1-r1"
+    },
+    {
+      "filename": "mesa-gl-26.1.1-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mesa-gl",
+      "repository": "main",
+      "sha256": "db669b2490ea8b27b6703405dbbc07d8f8c7962a266f2574833e6ebf7fc298c3",
+      "size": 204948,
+      "version": "26.1.1-r1"
+    },
+    {
+      "filename": "mesa-gles-26.1.1-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mesa-gles",
+      "repository": "main",
+      "sha256": "e7c13a3637b2727ade38fda223514fb9e15c464edd379b70950c05c54fadbef3",
+      "size": 23252,
+      "version": "26.1.1-r1"
+    },
+    {
+      "filename": "mii-tool-2.10-r3.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "mii-tool",
+      "repository": "main",
+      "sha256": "1b8e30d6b1bd77132efc2073315c45befc57dc1c3e1a2cd9836aa4790d4b642d",
+      "size": 8548,
+      "version": "2.10-r3"
+    },
+    {
+      "filename": "mkfontscale-1.2.4-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mkfontscale",
+      "repository": "main",
+      "sha256": "d5b6f40f7b9eb901b365b4d9a099c4b1d91faba4ab5b9fd1af19f6bc94b1cc3e",
+      "size": 15882,
+      "version": "1.2.4-r0"
+    },
+    {
+      "filename": "mpdecimal-4.0.1-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "mpdecimal",
+      "repository": "main",
+      "sha256": "d1fee342fc98fb4ac4832c01a63e22486b9b28ab1e8d7a80f8e4bd6a49989ed9",
+      "size": 84923,
+      "version": "4.0.1-r0"
+    },
+    {
+      "filename": "mtdev-1.1.7-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "mtdev",
+      "repository": "community",
+      "sha256": "5d02122366eba0e98f67d38999460085737b1ad0ef4e8f363b643f26ef3ad8c3",
+      "size": 9995,
+      "version": "1.1.7-r0"
+    },
+    {
+      "filename": "musl-1.2.6-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "musl",
+      "repository": "main",
+      "sha256": "3af0584621a51826e6320ad294b09ebc42907186fd99c9571d9d7bbcf1589752",
+      "size": 415823,
+      "version": "1.2.6-r2"
+    },
+    {
+      "filename": "musl-utils-1.2.6-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "musl-utils",
+      "repository": "main",
+      "sha256": "42679995654005a28ce85c5dce49afc1ca33b836cf38b590b666d8483f0a87c1",
+      "size": 13518,
+      "version": "1.2.6-r2"
+    },
+    {
+      "filename": "nano-9.0-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "nano",
+      "repository": "main",
+      "sha256": "69a2cafc6f61655ac72eca7e5fbf15e98dbc2199b22ffec7c3a126e2ce493c56",
+      "size": 161771,
+      "version": "9.0-r0"
+    },
+    {
+      "filename": "ncurses-terminfo-base-6.6_p20260516-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "ncurses-terminfo-base",
+      "repository": "main",
+      "sha256": "dbb8268b7a8c9e98b109dc6bd1a989f846bd49b71a186308a2224f3195620501",
+      "size": 22173,
+      "version": "6.6_p20260516-r0"
+    },
+    {
+      "filename": "net-tools-2.10-r3.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "net-tools",
+      "repository": "main",
+      "sha256": "d848c01c95d08812fb593dc2730a2ce33ee645520cd4c1c9a92448e5bcbe680b",
+      "size": 131647,
+      "version": "2.10-r3"
+    },
+    {
+      "filename": "nettle-3.10.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "nettle",
+      "repository": "main",
+      "sha256": "a535a3de93b383200f91235da4a42474aa7f78010ea0c5a83dd96f43162701f2",
+      "size": 346126,
+      "version": "3.10.2-r0"
+    },
+    {
+      "filename": "nghttp2-libs-1.69.0-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "nghttp2-libs",
+      "repository": "main",
+      "sha256": "a177a6eaea80d31064e657542cf4897a513343746ca49e954e926bace2e4fe33",
+      "size": 64637,
+      "version": "1.69.0-r0"
+    },
+    {
+      "filename": "nspr-4.38.2-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "nspr",
+      "repository": "main",
+      "sha256": "fcbf15f08934d7e7c13a6e9960e7734ddb308ca03f46f13f096a564161754900",
+      "size": 142460,
+      "version": "4.38.2-r0"
+    },
+    {
+      "filename": "nss-3.124-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "nss",
+      "repository": "main",
+      "sha256": "258f0996bc7ef9071a00f3e29fb8ea1209e52f5a9822e7087a9b0d0684330c92",
+      "size": 1769900,
+      "version": "3.124-r0"
+    },
+    {
+      "filename": "numactl-2.0.19-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "numactl",
+      "repository": "main",
+      "sha256": "301feb1fb85d7c1f573531373497e9728d81ebe63529e0e2a90527c8298ad8a0",
+      "size": 20953,
+      "version": "2.0.19-r0"
+    },
+    {
+      "filename": "oniguruma-6.9.10-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "oniguruma",
+      "repository": "main",
+      "sha256": "740c64352948cfbfbac6724fead4b953b63a75974a199b259d737bf82b0022ab",
+      "size": 188932,
+      "version": "6.9.10-r0"
+    },
+    {
+      "filename": "openbox-3.6.1-r8.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "openbox",
+      "repository": "community",
+      "sha256": "29f4e6267c78dca33a66f4596a96f5b32d8aea3bd6da6bdb092cd7bae3bd8960",
+      "size": 185037,
+      "version": "3.6.1-r8"
+    },
+    {
+      "filename": "openbox-libs-3.6.1-r8.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "openbox-libs",
+      "repository": "community",
+      "sha256": "247af68f8d49704dc36bdf674b3a3799b3eb15a9c94530931663b9562f87ad86",
+      "size": 63847,
+      "version": "3.6.1-r8"
+    },
+    {
+      "filename": "openrc-0.63.2-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "openrc",
+      "repository": "main",
+      "sha256": "6fe44cd6ba919109b4f3e821a550fef8040a9f432d1ad7fe16e47392b6898ce0",
+      "size": 223441,
+      "version": "0.63.2-r0"
+    },
+    {
+      "filename": "openrc-user-pam-0.63.2-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "openrc-user-pam",
+      "repository": "main",
+      "sha256": "c837865f28a2571d7818778ebf104995ce2a1c27af3904dc20fe0d65653d8bac",
+      "size": 16116,
+      "version": "0.63.2-r0"
+    },
+    {
+      "filename": "openssl-3.5.7-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "openssl",
+      "repository": "main",
+      "sha256": "2fb69e7bb45f73640d1ad6ec2c2bce90636d16c45254995eb3573d26e589c4c5",
+      "size": 336960,
+      "version": "3.5.7-r0"
+    },
+    {
+      "filename": "opus-1.6.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "opus",
+      "repository": "main",
+      "sha256": "676c8726ebfaeb1e2659caec61714c23461dcc7bad8ed95fb1a495164ee377f6",
+      "size": 272442,
+      "version": "1.6.1-r0"
+    },
+    {
+      "filename": "p11-kit-0.25.5-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "p11-kit",
+      "repository": "main",
+      "sha256": "c7fc62f77ce6b9e6c68f2212b6964f5e7ad3361db90f185e583d9d40a18f2108",
+      "size": 337891,
+      "version": "0.25.5-r2"
+    },
+    {
+      "filename": "pango-1.57.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "pango",
+      "repository": "main",
+      "sha256": "2d9c599bbaf26df357718e94dd26fda8b80e2b200515d2d87106df4317ff3046",
+      "size": 274775,
+      "version": "1.57.1-r0"
+    },
+    {
+      "filename": "pcre2-10.47-r1.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "pcre2",
+      "repository": "main",
+      "sha256": "315ac8c4b2036c4f698daf15810e2b1a91d5509a80a7a02a18de513fcce864c9",
+      "size": 325597,
+      "version": "10.47-r1"
+    },
+    {
+      "filename": "pixman-0.46.4-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "pixman",
+      "repository": "main",
+      "sha256": "c56de0740091e69fe93473de9c676976d3efe5658f131314f7355e07a8c21955",
+      "size": 245452,
+      "version": "0.46.4-r0"
+    },
+    {
+      "filename": "pkgconf-2.5.1-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "pkgconf",
+      "repository": "main",
+      "sha256": "43681ffe8284e82d690bd02f982b6019f3731aa4af4de7e2c8e636b78a993de8",
+      "size": 53445,
+      "version": "2.5.1-r0"
+    },
+    {
+      "filename": "procps-ng-4.0.6-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "procps-ng",
+      "repository": "main",
+      "sha256": "4c02e556522b7cba5768bbd945e58e326523b8767d7e11820d2195ab7b99abb2",
+      "size": 213819,
+      "version": "4.0.6-r0"
+    },
+    {
+      "filename": "py3-pip-26.1.2-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "py3-pip",
+      "repository": "main",
+      "sha256": "47e1bec67714963226d395b5ae3aae242b7b8e08ba4aecfb1a0f23685620a764",
+      "size": 1671705,
+      "version": "26.1.2-r0"
+    },
+    {
+      "filename": "python3-3.14.5-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "python3",
+      "repository": "main",
+      "sha256": "e72cbc37887107d0adda0927bacaa7b63fe9d3a1fe8231039fec3f1e5f602630",
+      "size": 8613670,
+      "version": "3.14.5-r0"
+    },
+    {
+      "filename": "rav1e-libs-0.8.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "rav1e-libs",
+      "repository": "community",
+      "sha256": "05d405dc6ed5cb9b8d6658527945cb018926aab1e8a6d3d71e043c7d33b3de05",
+      "size": 626387,
+      "version": "0.8.1-r0"
+    },
+    {
+      "filename": "readline-8.3.3-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "readline",
+      "repository": "main",
+      "sha256": "1d2a80bdfc66bfef11a9ed9715fa0189d646e562d2bddda6a1fec6ea815b9285",
+      "size": 128289,
+      "version": "8.3.3-r1"
+    },
+    {
+      "filename": "scanelf-1.3.9-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "scanelf",
+      "repository": "main",
+      "sha256": "e286945d1f186bb6ae225069b7e161639409764da3454fcc2211fa7a0c6cb858",
+      "size": 32662,
+      "version": "1.3.9-r1"
+    },
+    {
+      "filename": "sed-4.9-r2.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "sed",
+      "repository": "main",
+      "sha256": "fe4a1fb7c66b0508b36662dc4c5dd38f10451e6cae875ddf3318b3845cfeee47",
+      "size": 70475,
+      "version": "4.9-r2"
+    },
+    {
+      "filename": "shadow-4.18.0-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "shadow",
+      "repository": "community",
+      "sha256": "2b7401056527663d6fcce5534dddc22ee080c599a0668781e9d759f316d4c090",
+      "size": 525744,
+      "version": "4.18.0-r1"
+    },
+    {
+      "filename": "shared-mime-info-2.4-r7.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "shared-mime-info",
+      "repository": "main",
+      "sha256": "e74b64cafdaef97e48be2f7b4823864447f63dcafbf3530f268d8c38fc1b3966",
+      "size": 371850,
+      "version": "2.4-r7"
+    },
+    {
+      "filename": "skalibs-libs-2.15.0.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "skalibs-libs",
+      "repository": "main",
+      "sha256": "fc48c928a0e1fc83447cde4e3d5afb2494a9f3cdb238bc21ef1f0cec1825af69",
+      "size": 95246,
+      "version": "2.15.0.0-r0"
+    },
+    {
+      "filename": "soxr-0.1.3-r7.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "soxr",
+      "repository": "community",
+      "sha256": "a0855ac051299ad370ca12ed0bebe4ec0642dc9938e96bac24c9cf8f4c0d917f",
+      "size": 74555,
+      "version": "0.1.3-r7"
+    },
+    {
+      "filename": "spirv-tools-1.4.341.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "spirv-tools",
+      "repository": "main",
+      "sha256": "d98d38961aa19154a165ae4607d1da3c642c49c64a57dd15998fcb3607f406b9",
+      "size": 1920570,
+      "version": "1.4.341.0-r0"
+    },
+    {
+      "filename": "sqlite-libs-3.53.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "sqlite-libs",
+      "repository": "main",
+      "sha256": "296a2ee415be5df781e41ef86a871a176dc4d081ca9358945488939664c1b0af",
+      "size": 950542,
+      "version": "3.53.2-r0"
+    },
+    {
+      "filename": "startup-notification-0.12-r8.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "startup-notification",
+      "repository": "community",
+      "sha256": "9ea0698e97e5027e52731a14b794cb31b42e7a8d278189cc50e9b1de059364d3",
+      "size": 16018,
+      "version": "0.12-r8"
+    },
+    {
+      "filename": "sudo-1.9.17_p2-r1.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "sudo",
+      "repository": "community",
+      "sha256": "0de4b43a4ad4089aeb029015876764696bd689f69d72bcdc0a61563069b7977e",
+      "size": 704896,
+      "version": "1.9.17_p2-r1"
+    },
+    {
+      "filename": "tar-1.35-r5.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "tar",
+      "repository": "main",
+      "sha256": "0f6fa040c68024085e89838f397cd86a36de08a4b185f15581504c7849a068f3",
+      "size": 213217,
+      "version": "1.35-r5"
+    },
+    {
+      "filename": "tiff-4.7.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "tiff",
+      "repository": "main",
+      "sha256": "264bd2a6fce991d5312e95eab57245277047c03abf7299b75ac672f7240198a7",
+      "size": 172240,
+      "version": "4.7.1-r0"
+    },
+    {
+      "filename": "util-macros-1.20.2-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "util-macros",
+      "repository": "main",
+      "sha256": "6ae826bcce3839daa51e5e53ee5e15b8bd404b2359e5194175738c415ca05392",
+      "size": 24901,
+      "version": "1.20.2-r0"
+    },
+    {
+      "filename": "utmps-libs-0.1.3.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "utmps-libs",
+      "repository": "main",
+      "sha256": "8b75262151ebd102ecb1d89430e50ba93986fff4ecd61b57f14ba997f5816c76",
+      "size": 5796,
+      "version": "0.1.3.3-r0"
+    },
+    {
+      "filename": "uutils-0.9.0-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "uutils",
+      "repository": "community",
+      "sha256": "13bee0559775f52b24303b10484d2e65e444dec883f8b0056418b6668d8bc7e1",
+      "size": 4190218,
+      "version": "0.9.0-r0"
+    },
+    {
+      "filename": "uutils-coreutils-0.9.0-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "uutils-coreutils",
+      "repository": "community",
+      "sha256": "0257f2a625d894bb39e54d9e88817fed465d32ef23ef671ea06979d7805a47f3",
+      "size": 4768,
+      "version": "0.9.0-r0"
+    },
+    {
+      "filename": "vim-common-9.2.0680-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "vim-common",
+      "repository": "community",
+      "sha256": "78040deb56c3fd71ff924b8ec6b28441319b53eca831dd3a0da44ac92cb716fc",
+      "size": 8412153,
+      "version": "9.2.0680-r0"
+    },
+    {
+      "filename": "wayland-libs-client-1.25.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "wayland-libs-client",
+      "repository": "main",
+      "sha256": "d9135be575b078e6a47147a5d89f5b35beef9fabe90f0486a591dd4c5a2ab57b",
+      "size": 23158,
+      "version": "1.25.0-r0"
+    },
+    {
+      "filename": "wayland-libs-cursor-1.25.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "wayland-libs-cursor",
+      "repository": "main",
+      "sha256": "2ea93c163b732805ca173b91371e7487e71a6d9a446ac1dd53442710dcaa380b",
+      "size": 9331,
+      "version": "1.25.0-r0"
+    },
+    {
+      "filename": "wayland-libs-egl-1.25.0-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "wayland-libs-egl",
+      "repository": "main",
+      "sha256": "d16051a010ac43a5b0c721936a24ee299e53d7db19611f8aec4d92e4383b7899",
+      "size": 3579,
+      "version": "1.25.0-r0"
+    },
+    {
+      "filename": "wget-1.25.0-r3.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "wget",
+      "repository": "main",
+      "sha256": "e20fa4638a3a12a2a0ec07031d045f87dc05a8f0f5183e5a7d5d474b0db4501c",
+      "size": 214168,
+      "version": "1.25.0-r3"
+    },
+    {
+      "filename": "x264-libs-0.164.3108-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "x264-libs",
+      "repository": "community",
+      "sha256": "618ab6eae264e1febaf5f7aa3d4b6e2321e4f8d636a7b649a4e71e35479ef521",
+      "size": 862495,
+      "version": "0.164.3108-r1"
+    },
+    {
+      "filename": "x265-libs-4.1-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "x265-libs",
+      "repository": "main",
+      "sha256": "c7b82461c1da69a6f7c969a8ed5bc63ea358e6a6fc17146720e008abcc798b99",
+      "size": 2027910,
+      "version": "4.1-r0"
+    },
+    {
+      "filename": "xauth-1.1.5-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xauth",
+      "repository": "community",
+      "sha256": "ba28c34e163fddb84711724eb59707b9282f4e5ad09b3868a44aab35e0fb119e",
+      "size": 18201,
+      "version": "1.1.5-r0"
+    },
+    {
+      "filename": "xcb-util-0.4.1-r3.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xcb-util",
+      "repository": "main",
+      "sha256": "d54d4004318769ebe1b9ea4b2117d2f2a6a498f71dc7ff0bd6d478f3e6a6f31a",
+      "size": 7884,
+      "version": "0.4.1-r3"
+    },
+    {
+      "filename": "xf86-input-libinput-1.5.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xf86-input-libinput",
+      "repository": "community",
+      "sha256": "79a5f4af7fca0840e4c79658bea28b90bf31cf8e6230ffe8f7bd152b7e782420",
+      "size": 33955,
+      "version": "1.5.0-r0"
+    },
+    {
+      "filename": "xf86-video-vesa-2.6.0-r4.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xf86-video-vesa",
+      "repository": "community",
+      "sha256": "9e04d22607f00826cdb1c0616e5e78bebdfca2a378b2d9f8feaacb5ba2f381cc",
+      "size": 12889,
+      "version": "2.6.0-r4"
+    },
+    {
+      "filename": "xinit-1.4.4-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xinit",
+      "repository": "community",
+      "sha256": "9ced7b6442af5634c8208e305f354ba419cfd58d4024771823afae23b698dc7c",
+      "size": 12255,
+      "version": "1.4.4-r0"
+    },
+    {
+      "filename": "xkbcomp-1.5.0-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xkbcomp",
+      "repository": "main",
+      "sha256": "02ab73985765d0d7e870c1c71447e44c1b7e00114c90768b38b196fb430c3dc5",
+      "size": 80527,
+      "version": "1.5.0-r0"
+    },
+    {
+      "filename": "xkeyboard-config-2.47-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "xkeyboard-config",
+      "repository": "main",
+      "sha256": "99d914475ebacf5ed7aa5368ac7ff796de62a0445ed5a91ace6540d7e10d200b",
+      "size": 565366,
+      "version": "2.47-r0"
+    },
+    {
+      "filename": "xmodmap-1.0.11-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xmodmap",
+      "repository": "community",
+      "sha256": "bc3c568fd26b1443a43cb1152f6ab0c40878e8de314fdb396a3b8aa278556ebc",
+      "size": 14368,
+      "version": "1.0.11-r1"
+    },
+    {
+      "filename": "xorg-server-21.1.23-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xorg-server",
+      "repository": "community",
+      "sha256": "4cc093bef420824de5b1ce01e7859614a90833a19793efa5acfc413bffbf53ba",
+      "size": 1317126,
+      "version": "21.1.23-r0"
+    },
+    {
+      "filename": "xorg-server-common-21.1.23-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xorg-server-common",
+      "repository": "community",
+      "sha256": "479e298f47aebccfb36d5d6065fb838d152e4b50349c078c4538b522402bbd94",
+      "size": 8489,
+      "version": "21.1.23-r0"
+    },
+    {
+      "filename": "xrandr-1.5.4-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xrandr",
+      "repository": "community",
+      "sha256": "23c9abaf9b60e5c6149bcb53461aab79d0072a17b5274e6b0bb5d8ae6908c06d",
+      "size": 26993,
+      "version": "1.5.4-r0"
+    },
+    {
+      "filename": "xrdb-1.2.2-r0.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xrdb",
+      "repository": "community",
+      "sha256": "8e3022ab3949fdef52c9cd1657e61c2b67e6b6f78fdba59162b11788152363d9",
+      "size": 12720,
+      "version": "1.2.2-r0"
+    },
+    {
+      "filename": "xsetroot-1.1.3-r1.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xsetroot",
+      "repository": "community",
+      "sha256": "3b7d0ec10bcf51f61c5dd0324b66f79af59a7916bf4ca41f9f9ea1968734a3a1",
+      "size": 7539,
+      "version": "1.1.3-r1"
+    },
+    {
+      "filename": "xvidcore-1.3.7-r2.apk",
+      "groups": [
+        "firefox"
+      ],
+      "package": "xvidcore",
+      "repository": "community",
+      "sha256": "42da4ee6fb8fea18b1dd82a946039de99f53f739ecf3792e330b3e4e0fc2e1fa",
+      "size": 143405,
+      "version": "1.3.7-r2"
+    },
+    {
+      "filename": "xxd-9.2.0680-r0.apk",
+      "groups": [
+        "base"
+      ],
+      "package": "xxd",
+      "repository": "community",
+      "sha256": "05b6ab1992eb29894e752581947ad906036c910988724fe70544080a0f4e0a7c",
+      "size": 9984,
+      "version": "9.2.0680-r0"
+    },
+    {
+      "filename": "xz-libs-5.8.3-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "xz-libs",
+      "repository": "main",
+      "sha256": "40013c27fb3ae3a7f5b518d41c7ec8235cea3443ccc577467e6bf138077c1ca6",
+      "size": 133283,
+      "version": "5.8.3-r0"
+    },
+    {
+      "filename": "zlib-1.3.2-r0.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "zlib",
+      "repository": "main",
+      "sha256": "0f4eb8d8d61809514c0d537f02bf3f8375781092ec6e510d1514cb014ad9986d",
+      "size": 55305,
+      "version": "1.3.2-r0"
+    },
+    {
+      "filename": "zstd-libs-1.5.7-r2.apk",
+      "groups": [
+        "base",
+        "firefox"
+      ],
+      "package": "zstd-libs",
+      "repository": "main",
+      "sha256": "3808b97766907956179fe94ce61ead63220e957dc7789f81eb961a6e94dd8f61",
+      "size": 370035,
+      "version": "1.5.7-r2"
+    }
+  ],
+  "repositories": [
+    "main",
+    "community"
+  ],
+  "requested": [
+    "bash",
+    "sudo",
+    "git",
+    "curl",
+    "wget",
+    "nano",
+    "vim",
+    "less",
+    "python3",
+    "py3-pip",
+    "htop",
+    "procps",
+    "net-tools",
+    "coreutils",
+    "grep",
+    "sed",
+    "tar",
+    "gzip",
+    "openssl",
+    "ca-certificates",
+    "bash-completion",
+    "shadow",
+    "alpine-base",
+    "busybox-binsh",
+    "firefox-esr",
+    "xorg-server",
+    "xinit",
+    "openbox",
+    "xf86-video-vesa",
+    "xf86-input-libinput",
+    "font-dejavu",
+    "adwaita-icon-theme",
+    "dbus",
+    "dbus-x11",
+    "xsetroot",
+    "xrandr"
+  ],
+  "requested_groups": {
+    "base": [
+      "bash",
+      "sudo",
+      "git",
+      "curl",
+      "wget",
+      "nano",
+      "vim",
+      "less",
+      "python3",
+      "py3-pip",
+      "htop",
+      "procps",
+      "net-tools",
+      "coreutils",
+      "grep",
+      "sed",
+      "tar",
+      "gzip",
+      "openssl",
+      "ca-certificates",
+      "bash-completion",
+      "shadow"
+    ],
+    "firefox": [
+      "alpine-base",
+      "busybox-binsh",
+      "firefox-esr",
+      "xorg-server",
+      "xinit",
+      "openbox",
+      "xf86-video-vesa",
+      "xf86-input-libinput",
+      "font-dejavu",
+      "adwaita-icon-theme",
+      "dbus",
+      "dbus-x11",
+      "xsetroot",
+      "xrandr"
+    ]
+  },
+  "source": "Alpine APKINDEX dependency resolution"
+}

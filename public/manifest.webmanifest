@@ -1,0 +1,14 @@
+{
+  "name": "BrowserOS — Linux in your browser",
+  "short_name": "BrowserOS",
+  "description": "A real Linux operating system that runs entirely in your browser. Persistent, no install.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

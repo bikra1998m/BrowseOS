@@ -1,0 +1,93 @@
+#!/bin/sh
+# Complete BrowserOS Ubuntu-like setup, run as ONE command (no typing races).
+# Run with tracing to SEE every step:   sh -x /mnt/tools/install.sh
+echo ">>> install.sh started <<<"
+echo ">>> install.sh started <<<" > /dev/console 2>/dev/null
+[ "$VERBOSE" = "1" ] && set -x
+echo '== STEP 1/4: checking tools filesystem =='
+
+# Mount the 9p tools fs if not already mounted.
+if [ ! -d /mnt/tools/apks ]; then
+  mkdir -p /mnt/tools
+  for m in 9p 9pnet 9pnet_virtio; do modprobe $m 2>/dev/null; done
+  mount -t 9p -o trans=virtio,version=9p2000.L host9p /mnt/tools 2>/dev/null \
+    || mount -t 9p -o trans=virtio host9p /mnt/tools 2>/dev/null
+fi
+[ -d /mnt/tools/apks ] || { echo 'ERROR: tools fs not mounted'; exit 1; }
+
+# Keep the compressed APKs on 9p. Copying the Firefox bundle into /tmp would
+# waste hundreds of megabytes of the guest's RAM-backed live filesystem.
+echo '== STEP 2/4: reading bundled packages =='
+echo '== STEP 3/4: installing packages =='
+
+total=$(ls /mnt/tools/apks/*.apk 2>/dev/null | wc -l)
+echo "Installing $total verified packages directly from the tools filesystem..."
+apk add --allow-untrusted --no-network --force-non-repository   /mnt/tools/apks/*.apk
+echo '== All packages installed =='
+
+echo '== Bringing up networking (eth0 + DHCP) =='
+ip link set eth0 up 2>/dev/null
+# Request a DHCP lease from the relay (background so it doesn't block boot).
+( udhcpc -i eth0 -t 5 -n >/dev/null 2>&1 || ifup eth0 2>/dev/null ) &
+# Enable networking at every boot too.
+rc-update add networking boot 2>/dev/null
+cat > /etc/network/interfaces <<'NEOF'
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet dhcp
+NEOF
+
+echo '== STEP 4/4: configuring Ubuntu-like environment =='
+cat > /usr/local/bin/apt <<'AEOF'
+#!/bin/sh
+# apt -> apk shim. Tries the INTERNET first (real installs); if offline,
+# falls back to the bundled offline tools disk.
+ALPVER=$(cut -d. -f1,2 /etc/alpine-release 2>/dev/null || echo 3.24)
+ensure_repos() {
+  # Make sure online repositories are configured.
+  if ! grep -q dl-cdn /etc/apk/repositories 2>/dev/null; then
+    echo "https://dl-cdn.alpinelinux.org/alpine/v$ALPVER/main" > /etc/apk/repositories
+    echo "https://dl-cdn.alpinelinux.org/alpine/v$ALPVER/community" >> /etc/apk/repositories
+  fi
+}
+c=$1; shift 2>/dev/null
+case $c in
+  update)
+    ensure_repos
+    echo "apt: updating package lists from the internet..."
+    apk update ;;
+  upgrade|full-upgrade|dist-upgrade)
+    ensure_repos; apk upgrade ;;
+  install)
+    ensure_repos
+    # Try online first; if that fails (no internet), use the offline bundle.
+    apk add "$@" || {
+      echo "apt: online install failed, trying offline bundle..."
+      apk add --allow-untrusted --no-network --force-non-repository "$@" 2>/dev/null         || echo "apt: '$*' not available online or in the offline bundle."
+    } ;;
+  remove|purge) apk del "$@" ;;
+  search) ensure_repos; apk search "$@" ;;
+  show)   apk info "$@" ;;
+  list)   apk list --installed ;;
+  *) echo "apt: usage: update | upgrade | install | remove | search | show | list" ;;
+esac
+AEOF
+chmod +x /usr/local/bin/apt
+ln -sf /usr/local/bin/apt /usr/local/bin/apt-get
+
+cat > /etc/profile.d/ubuntu.sh <<'PEOF'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+export EDITOR=nano
+export PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ '
+PEOF
+chmod +x /etc/profile.d/ubuntu.sh
+
+echo ''
+echo '=================================================='
+echo ' Done! Ubuntu-like development environment ready.'
+echo '=================================================='
+[ "$BROWSEROS_SETUP_ONLY" = "1" ] || exec bash -l

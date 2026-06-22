@@ -1,0 +1,17 @@
+{
+  "name": "browseros-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BrowserOS WebSocket virtual-switch relay",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node relay.js",
+    "check": "node --check relay.js"
+  },
+  "dependencies": {
+    "ws": "8.21.0"
+  }
+}

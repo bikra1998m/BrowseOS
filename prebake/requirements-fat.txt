@@ -1,0 +1,2 @@
+# Optional dependency for make-fat.py only. The main 9p build uses stdlib Python.
+pyfatfs==1.1.0

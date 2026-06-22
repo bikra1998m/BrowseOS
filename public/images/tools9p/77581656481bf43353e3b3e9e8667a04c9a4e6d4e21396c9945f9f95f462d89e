@@ -1,0 +1,137 @@
+#!/bin/sh
+set -e
+echo ">>> install-firefox.sh started <<<"
+ROOT=/mnt/tools/firefox-root
+
+if [ ! -d /mnt/tools/firefox-apks ]; then
+  echo "ERROR: Firefox package group is not mounted"
+  exit 1
+fi
+
+mkdir -p "$ROOT"/dev "$ROOT"/proc "$ROOT"/sys "$ROOT"/run "$ROOT"/tmp
+mountpoint -q "$ROOT/dev" || mount -o bind /dev "$ROOT/dev"
+mountpoint -q "$ROOT/proc" || mount -t proc proc "$ROOT/proc"
+mountpoint -q "$ROOT/sys" || mount -o bind /sys "$ROOT/sys"
+cp /etc/resolv.conf "$ROOT/etc/resolv.conf" 2>/dev/null || true
+
+if [ ! -x "$ROOT/usr/bin/firefox-esr" ] || [ ! -x "$ROOT/usr/bin/Xorg" ]; then
+  total=$(ls /mnt/tools/firefox-apks/*.apk 2>/dev/null | wc -l)
+  echo "Installing $total verified Firefox/Xorg packages onto writable 9p storage..."
+  apk add --root "$ROOT" --initdb --no-cache --allow-untrusted --no-network     --force-non-repository /mnt/tools/firefox-apks/*.apk
+fi
+
+mkdir -p "$ROOT/etc/X11/xorg.conf.d" "$ROOT/root/.config/openbox"   "$ROOT/root/.mozilla/browseros" "$ROOT/usr/local/bin"
+cat > "$ROOT/etc/X11/xorg.conf.d/20-browseros-vga.conf" <<'XEOF'
+Section "ServerFlags"
+  Option "AutoAddDevices" "false"
+EndSection
+Section "Device"
+  Identifier "BrowserOS VGA"
+  Driver "modesetting"
+  Option "AccelMethod" "none"
+EndSection
+Section "Screen"
+  Identifier "BrowserOS Screen"
+  Device "BrowserOS VGA"
+  DefaultDepth 24
+  SubSection "Display"
+    Depth 24
+    Modes "1024x768" "800x600"
+  EndSubSection
+EndSection
+Section "InputDevice"
+  Identifier "BrowserOS Keyboard"
+  Driver "libinput"
+  Option "Device" "/dev/input/event0"
+EndSection
+Section "InputDevice"
+  Identifier "BrowserOS Mouse"
+  Driver "libinput"
+  Option "Device" "/dev/input/event1"
+EndSection
+Section "ServerLayout"
+  Identifier "BrowserOS Layout"
+  Screen "BrowserOS Screen"
+  InputDevice "BrowserOS Keyboard" "CoreKeyboard"
+  InputDevice "BrowserOS Mouse" "CorePointer"
+EndSection
+XEOF
+
+cat > "$ROOT/root/.config/openbox/autostart" <<'OEOF'
+xsetroot -solid '#2c0a2e' &
+OEOF
+
+cat > "$ROOT/root/.config/mimeapps.list" <<'MEOF'
+[Default Applications]
+text/html=firefox-esr.desktop
+x-scheme-handler/http=firefox-esr.desktop
+x-scheme-handler/https=firefox-esr.desktop
+
+[Added Associations]
+text/html=firefox-esr.desktop;
+x-scheme-handler/http=firefox-esr.desktop;
+x-scheme-handler/https=firefox-esr.desktop;
+MEOF
+
+cat > "$ROOT/usr/local/bin/browseros-firefox-session" <<'FEOF'
+#!/bin/sh
+export GDK_BACKEND=x11
+export BROWSER=firefox-esr
+export DEFAULT_BROWSER=firefox-esr
+export LIBGL_ALWAYS_SOFTWARE=1
+export MOZ_X11_EGL=0
+export MOZ_DISABLE_CONTENT_SANDBOX=1
+export MOZ_DISABLE_GMP_SANDBOX=1
+export MOZ_ENABLE_WAYLAND=0
+export MOZ_WEBRENDER=0
+xsetroot -solid '#2c0a2e'
+openbox > /tmp/browseros-openbox.log 2>&1 &
+exec dbus-run-session -- firefox-esr --no-remote --new-instance   --profile /root/.mozilla/browseros https://duckduckgo.com/   > /tmp/browseros-firefox.log 2>&1
+FEOF
+chmod +x "$ROOT/usr/local/bin/browseros-firefox-session"
+
+cat > "$ROOT/root/.mozilla/browseros/user.js" <<'FEOF'
+user_pref("browser.aboutwelcome.enabled", false);
+user_pref("browser.shell.checkDefaultBrowser", false);
+user_pref("browser.startup.firstrunSkipsHomepage", true);
+user_pref("gfx.webrender.all", false);
+user_pref("layers.acceleration.disabled", true);
+FEOF
+
+cat > "$ROOT/usr/local/bin/browseros-firefox-inner" <<'FEOF'
+#!/bin/sh
+export HOME=/root
+export XDG_RUNTIME_DIR=/tmp/runtime-root
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 700 "$XDG_RUNTIME_DIR"
+exec startx /usr/local/bin/browseros-firefox-session -- :0 -nolisten tcp vt1
+FEOF
+chmod +x "$ROOT/usr/local/bin/browseros-firefox-inner"
+
+cat > /usr/local/bin/browseros-firefox <<'FEOF'
+#!/bin/sh
+set -e
+ROOT=/mnt/tools/firefox-root
+modprobe psmouse 2>/dev/null || true
+if [ ! -e /dev/dri/card0 ]; then
+  echo "Starting the VM graphics adapter..."
+  modprobe bochs defx=1024 defy=768
+fi
+[ -e /dev/dri/card0 ] || {
+  echo "ERROR: the BrowserOS graphics adapter did not start"
+  exit 1
+}
+mkdir -p "$ROOT"/dev "$ROOT"/proc "$ROOT"/sys
+mountpoint -q "$ROOT/dev" || mount -o bind /dev "$ROOT/dev"
+mountpoint -q "$ROOT/proc" || mount -t proc proc "$ROOT/proc"
+mountpoint -q "$ROOT/sys" || mount -o bind /sys "$ROOT/sys"
+cp /etc/resolv.conf "$ROOT/etc/resolv.conf" 2>/dev/null || true
+exec chroot "$ROOT" /usr/local/bin/browseros-firefox-inner
+FEOF
+chmod +x /usr/local/bin/browseros-firefox
+
+echo ''
+echo '=================================================='
+echo ' Firefox ESR and the graphical desktop are ready.'
+echo ' Run browseros-firefox to start the graphical browser.'
+echo '=================================================='
