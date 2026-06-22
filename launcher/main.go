@@ -42,10 +42,13 @@ func main() {
 
 	natStatus := initRelayNAT()
 	defer shutdownRelayNAT()
+	bridgeStatus := initLANBridge()
+	defer shutdownLANBridge()
 	go func() {
 		ch := make(chan os.Signal, 1)
 		signal.Notify(ch, os.Interrupt)
 		<-ch
+		shutdownLANBridge()
 		shutdownRelayNAT()
 		os.Exit(0)
 	}()
@@ -75,6 +78,7 @@ func main() {
 		fmt.Printf("    LAN access   : off (set BROWSEROS_ALLOW_LAN=1 to opt in)\n")
 	}
 	fmt.Printf("    VM internet  : built-in WISP proxy ON\n")
+	fmt.Printf("    LAN bridge   : %s\n", bridgeStatus)
 	fmt.Printf("    VM network   : built-in relay ON  (tabs get unique IPs")
 	if natStatus != "" {
 		fmt.Printf("; %s", natStatus)
@@ -123,7 +127,36 @@ func newHandler(publicFS fs.FS, allowLAN bool) http.Handler {
 		if r.URL.Path == "/browseros-capabilities.json" {
 			h.Set("Content-Type", "application/json")
 			h.Set("Cache-Control", "no-store")
-			_, _ = w.Write([]byte(`{"wisp":"/wisp/","relay":"/relay"}`))
+			_, _ = w.Write(capabilitiesPayload())
+			return
+		}
+
+		// Real host-LAN bridge. The browser still sends raw Ethernet over a
+		// same-origin WebSocket; Npcap connects it to the active Windows adapter.
+		if r.URL.Path == "/bridge" && strings.Contains(strings.ToLower(r.Header.Get("Upgrade")), "websocket") {
+			if !lanBridgeCanAccept() {
+				http.Error(w, "LAN bridge is unavailable or full", http.StatusServiceUnavailable)
+				return
+			}
+			if err := validWebSocketUpgrade(r, allowLAN); err != nil {
+				http.Error(w, err.Error(), http.StatusForbidden)
+				return
+			}
+			key := r.Header.Get("Sec-WebSocket-Key")
+			hj, ok := w.(http.Hijacker)
+			if !ok || key == "" {
+				http.Error(w, "no hijack", 500)
+				return
+			}
+			conn, buf, err := hj.Hijack()
+			if err != nil {
+				return
+			}
+			vmID := strings.TrimSpace(r.URL.Query().Get("vm"))
+			if vmID == "" {
+				vmID = conn.RemoteAddr().String()
+			}
+			lanBridgeHandleConn(conn, buf.Reader, key, vmID)
 			return
 		}
 

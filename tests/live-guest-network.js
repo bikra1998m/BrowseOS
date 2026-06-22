@@ -5,6 +5,8 @@ const assert = require("assert");
 
 const debuggerUrl = process.argv[2];
 const relayUrl = process.env.BROWSEROS_TEST_RELAY || "";
+const attachMode = process.env.BROWSEROS_TEST_ATTACH || "nat";
+const expectedPrefix = process.env.BROWSEROS_EXPECT_IP_PREFIX || "";
 const timeoutMs = Number(process.env.BROWSEROS_NETWORK_TIMEOUT_MS || 420000);
 if (!debuggerUrl) {
   console.error("Usage: node tests/live-guest-network.js <webSocketDebuggerUrl>");
@@ -73,7 +75,7 @@ ws.onopen = async () => {
     await evaluate(`(() => {
       localStorage.setItem("browseros-netcfg", JSON.stringify({
         enabled: true,
-        attach: "nat",
+        attach: ${JSON.stringify(attachMode)},
         name: ${JSON.stringify(relayUrl)},
         type: "virtio",
         promisc: "deny",
@@ -103,7 +105,7 @@ ws.onopen = async () => {
       const opts = {};
       await applyNetwork(opts);
       return {
-        backend: await resolveDefaultInternetUrl(),
+        backend: opts.net_device.relay_url,
         instance: window.__browserOSInstance,
         device: opts.net_device
       };
@@ -111,8 +113,22 @@ ws.onopen = async () => {
     const selectedBackend = networkConfig.backend;
     const expectedIP = networkConfig.device.vm_ip;
     console.log("Selected guest network backend:", selectedBackend);
-    console.log("Expected stable guest IP:", expectedIP);
-    assert.equal(expectedIP, networkConfig.instance.natIP);
+    if (attachMode === "nat") {
+      console.log("Expected stable guest IP:", expectedIP);
+      assert.equal(expectedIP, networkConfig.instance.natIP);
+    }
+    const ipCheck = expectedIP
+      ? `ip -4 addr show dev eth0 | grep -q 'inet ${expectedIP}/'`
+      : expectedPrefix
+        ? `ip -4 addr show dev eth0 | grep -q 'inet ${expectedPrefix}'`
+        : "ip -4 addr show dev eth0 | grep -q 'inet '";
+    const guestCommand =
+      "echo NET_BEGIN; ip -4 addr show dev eth0; ip route; " +
+      "nslookup dl-cdn.alpinelinux.org; " +
+      "wget -T 30 -O /dev/null https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86/APKINDEX.tar.gz " +
+      "&& printf 'HTTPS_%s\\n' OK || printf 'HTTPS_%s\\n' FAIL; " +
+      ipCheck + " && printf 'IP_%s\\n' OK || printf 'IP_%s\\n' FAIL; " +
+      "printf 'NET_%s\\n' DONE\n";
     await evaluate(`document.getElementById("btnStart").click()`);
 
     let text = "";
@@ -129,15 +145,7 @@ ws.onopen = async () => {
       emulator.keyboard_set_enabled?.(true);
       await emulator.keyboard_send_text("root\\n", 40);
       await new Promise(resolve => setTimeout(resolve, 2500));
-      await emulator.keyboard_send_text(
-        "echo NET_BEGIN; ip -4 addr show dev eth0; ip route; " +
-        "nslookup dl-cdn.alpinelinux.org; " +
-        "wget -T 30 -O /dev/null https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86/APKINDEX.tar.gz " +
-        "&& printf 'HTTPS_%s\\n' OK || printf 'HTTPS_%s\\n' FAIL; " +
-        "ip -4 addr show dev eth0 | grep -q 'inet ${expectedIP}/' && printf 'IP_%s\\n' OK || printf 'IP_%s\\n' FAIL; " +
-        "printf 'NET_%s\\n' DONE\\n",
-        8
-      );
+      await emulator.keyboard_send_text(${JSON.stringify(guestCommand)}, 8);
     })()`);
 
     deadline = Date.now() + 120000;
@@ -150,7 +158,9 @@ ws.onopen = async () => {
     console.log(text);
     assert(/NET_DONE/.test(text), "Guest network command timed out");
     assert(/IP_OK/.test(text), "Guest did not receive an IPv4 address");
-    const backend = relayUrl || "the launcher's automatic NAT backend";
+    const backend = attachMode === "bridged"
+      ? "the launcher's host-LAN bridge"
+      : relayUrl || "the launcher's automatic NAT backend";
     assert(/HTTPS_OK/.test(text), `Guest HTTPS failed through ${backend}`);
     assert(!/HTTPS_FAIL/.test(text), `Guest HTTPS failed through ${backend}`);
     console.log(`live guest network checks passed through ${backend}`);

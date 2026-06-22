@@ -433,7 +433,16 @@ async function boot() {
   };
 
   // ----- Apply user Network config (VirtualBox-style → v86 reality) -----
-  await applyNetwork(opts);
+  try {
+    await applyNetwork(opts);
+  } catch (error) {
+    setStatus("Network unavailable", "err");
+    els.start.disabled = false;
+    els.ovTitle.textContent = "Network setup failed";
+    els.ovText.textContent = error.message;
+    stopBootClock();
+    return;
+  }
   if (saved) {
     opts.initial_state = { buffer: saved };
     els.ovText.textContent = "Restoring your saved session…";
@@ -711,6 +720,20 @@ async function resolveDefaultRelayUrl() {
   return relayResolution;
 }
 
+let bridgeResolution = null;
+async function resolveDefaultBridgeUrl() {
+  if (bridgeResolution) return bridgeResolution;
+  bridgeResolution = (async () => {
+    const capabilities = await resolveLauncherCapabilities();
+    const bridge = capabilities && capabilities.bridge;
+    if (!bridge || typeof bridge.path !== "string" || !bridge.path) return "";
+    const url = new URL(websocketUrl(bridge.path));
+    url.searchParams.set("vm", Instance.id);
+    return url.href;
+  })();
+  return bridgeResolution;
+}
+
 
 // Returns true if an OS image is actually present (HEAD; falls back to a
 // tiny ranged GET for servers that don't answer HEAD). Used for auto-fallback.
@@ -947,8 +970,8 @@ els.stop.onclick = () => { if (confirm("Power off the machine now?")) powerOff()
 //   NAT          -> WISP TCP proxy (cross-platform internet, including HTTPS)
 //   NAT Network  -> raw Ethernet relay (VM-to-VM; internet only if that relay
 //                   also provides NAT)
-//   Bridged / Host-only/ Internal -> best-effort approximations; real host
-//                                     bridging isn't possible in-browser
+//   Bridged      -> launcher-assisted Npcap bridge onto the active Windows LAN
+//   Host-only / Internal -> offline NIC approximations
 //   Not Attached / disabled / cable off -> no NIC (offline)
 async function applyNetwork(opts) {
   const n = CFG.net || {};
@@ -971,6 +994,16 @@ async function applyNetwork(opts) {
     dev.relay_url = (n.name && (/^(?:wisp|wisps|ws|wss):\/\//.test(n.name) || n.name === "fetch"))
       ? n.name
       : await resolveDefaultInternetUrl();
+  } else if (n.attach === "bridged") {
+    dev.relay_url = (n.name && /^wss?:\/\//.test(n.name))
+      ? n.name
+      : await resolveDefaultBridgeUrl();
+    if (!dev.relay_url) {
+      throw new Error(
+        "Real bridged networking requires the Windows launcher and an installed Npcap driver. " +
+        "Use NAT when the bridge capability is unavailable."
+      );
+    }
   } else {
     dev.relay_url = (n.name && /^wss?:\/\//.test(n.name))
       ? n.name
@@ -1002,12 +1035,12 @@ async function applyNetwork(opts) {
   if (elN.mtu) elN.mtu.value = N.mtu || "";
   if (elN.cable) elN.cable.checked = N.cable !== false;
 
-  const NAME_LABELS = { nat:"Internet proxy", natnet:"NAT network", bridged:"Bridge name",
+  const NAME_LABELS = { nat:"Internet proxy", natnet:"NAT network", bridged:"Bridge relay",
                         internal:"Network name", hostonly:"Adapter", notattached:"" };
   const NOTES = {
     nat:        "Each VM gets a stable unique <code>192.168.86.x</code> address. The standalone launcher uses its built-in WISP proxy; hosted deployments need a compatible <code>wisps://...</code> endpoint. DNS and TCP/HTTPS work, but NAT VMs remain isolated from each other.",
     natnet:     "<b>VMs share a subnet</b> via the raw Ethernet relay. The bundled relay gives each tab a unique 10.5.0.x address; internet on this mode requires a relay host with NAT.",
-    bridged:    "<b>Not possible in a browser</b> — needs a real hypervisor (VirtualBox/VMware/QEMU) for a router DHCP IP. Use NAT here.",
+    bridged:    "<b>Real host-LAN mode:</b> the Windows launcher uses Npcap proxy ARP and MAC translation to give this VM a reachable address on the host subnet. The guest is exposed to other LAN devices; avoid untrusted networks.",
     internal:   "Not available in a browser. Use NAT.",
     hostonly:   "Not available in a browser. Use NAT.",
     notattached:"No network adapter — the VM is fully offline.",
@@ -1018,7 +1051,11 @@ async function applyNetwork(opts) {
     ["attach","name","type","promisc","mac","mtu","cable","pfBtn"].forEach(k => { if (elN[k]) elN[k].disabled = !on; });
     if (elN.nameField) elN.nameField.style.display = (a === "notattached" || !on) ? "none" : "";
     if (elN.nameLbl) elN.nameLbl.textContent = NAME_LABELS[a] || "Name";
-    if (elN.name) elN.name.placeholder = a === "nat" ? "automatic (built-in WISP)" : (a + " name");
+    if (elN.name) {
+      elN.name.placeholder = a === "nat"
+        ? "automatic (built-in WISP)"
+        : a === "bridged" ? "automatic (active host adapter)" : (a + " name");
+    }
     if (elN.pfBtn) elN.pfBtn.style.display = a === "natnet" ? "" : "none";
     if (elN.note) elN.note.innerHTML = on ? (NOTES[a] || "") : "Network adapter disabled — VM is offline.";
   }

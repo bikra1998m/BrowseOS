@@ -54,6 +54,9 @@ browseros/
 - Docked **Firefox ESR** that runs inside the Alpine VM through Xorg/Openbox
 - Cross-platform guest **NAT internet** in the standalone launcher (DHCP, DNS,
   TCP/HTTPS; no administrator privileges or TUN/TAP driver)
+- Optional Windows **Bridged Adapter** mode using an installed Npcap driver:
+  guests receive real host-subnet addresses and are reachable from other LAN
+  devices through proxy ARP and Wi-Fi-safe MAC translation
 - Serialized **auto-save** every 5 minutes, plus throttled background saves
 - **Pause/Resume**, **Ctrl-Alt-Del**, **Export state** to a file
 - Live **uptime** and machine info panel
@@ -116,6 +119,14 @@ The launcher exposes two different network modes: **NAT** gives every saved VM a
 stable unique `192.168.86.x` address and uses the built-in WISP proxy for normal
 outbound internet, while **NAT Network** uses the raw Ethernet relay for direct
 communication between BrowserOS VMs.
+
+On Windows, **Bridged Adapter** becomes available when
+[Npcap](https://npcap.com/) is installed. It allocates a free address from the
+active host subnet (for example `192.168.1.x`), advertises that address with
+proxy ARP, and translates Ethernet MAC addresses so it also works over Wi-Fi.
+This exposes the guest to the local network. Some Wi-Fi drivers do not loop
+packets back to the same host, so test inbound access from another LAN device
+rather than relying on a host-to-guest ping.
 
 ## 📄 License
 Your code here is yours. v86 is BSD-2-Clause; Alpine is its own license.

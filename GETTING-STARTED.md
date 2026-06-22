@@ -101,6 +101,12 @@ internet access. NAT VMs remain isolated from each other. **NAT Network** is the
 separate VM-to-VM Ethernet relay and only has internet when its relay host also
 provides NAT.
 
+To give a Windows guest a real address on the host LAN, install
+[Npcap](https://npcap.com/), run the self-contained launcher, and choose
+**Network → Attached to → Bridged Adapter**. BrowserOS detects the active adapter,
+offers an unused address from its subnet, and exposes the VM to other LAN
+devices. Do not use Bridged Adapter on an untrusted public network.
+
 How to use:
 1. Boot Alpine, log in as `root`.
 2. Click inside the console, then click **⚡ Setup Ubuntu env**.

@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"encoding/binary"
 	"io"
 	"io/fs"
@@ -14,6 +15,21 @@ import (
 	"testing/fstest"
 	"time"
 )
+
+type fakeLANPacketPort struct {
+	writes [][]byte
+}
+
+func (port *fakeLANPacketPort) ReadPacket() ([]byte, error) {
+	return nil, io.EOF
+}
+
+func (port *fakeLANPacketPort) WritePacket(packet []byte) error {
+	port.writes = append(port.writes, append([]byte(nil), packet...))
+	return nil
+}
+
+func (port *fakeLANPacketPort) Close() {}
 
 func relayRequest(origin, host string) *http.Request {
 	req := httptest.NewRequest(http.MethodGet, "http://"+host+"/relay", nil)
@@ -43,9 +59,79 @@ func TestCapabilitiesAdvertiseBuiltInNetworking(t *testing.T) {
 	if got := rec.Header().Get("Cache-Control"); got != "no-store" {
 		t.Fatalf("Cache-Control = %q, want no-store", got)
 	}
-	if got := strings.TrimSpace(rec.Body.String()); got != `{"wisp":"/wisp/","relay":"/relay"}` {
+	if got := strings.TrimSpace(rec.Body.String()); got != `{"wisp":"/wisp/","relay":"/relay","bridge":null}` {
 		t.Fatalf("body = %q", got)
 	}
+}
+
+func TestLANAddressHelpers(t *testing.T) {
+	ip := net.ParseIP("192.168.1.6")
+	if got := networkIP(ip, 24).String(); got != "192.168.1.0" {
+		t.Fatalf("network = %s", got)
+	}
+	if got := broadcastIP(ip, 24).String(); got != "192.168.1.255" {
+		t.Fatalf("broadcast = %s", got)
+	}
+	if got := net.IP(prefixMask(24)).String(); got != "255.255.255.0" {
+		t.Fatalf("mask = %s", got)
+	}
+}
+
+func TestLANBridgeAnswersARPForGuest(t *testing.T) {
+	port := &fakeLANPacketPort{}
+	manager := &lanBridgeManager{
+		port: port,
+		config: lanHostConfig{
+			HostIP:  net.ParseIP("192.168.1.6"),
+			Prefix:  24,
+			Gateway: net.ParseIP("192.168.1.1"),
+			MAC:     mustMAC(t, "48:68:4a:d9:cd:ad"),
+		},
+		clients: make(map[*lanBridgeClient]bool),
+		byIP:    make(map[uint32]*lanBridgeClient),
+		seen:    make(map[uint32]time.Time),
+	}
+	guestIP := net.ParseIP("192.168.1.212")
+	manager.byIP[ipUint32(guestIP)] = &lanBridgeClient{ip: guestIP}
+	requesterMAC := mustMAC(t, "16:98:f9:27:73:5f")
+	requesterIP := net.ParseIP("192.168.1.3")
+	request := make([]byte, 42)
+	for index := 0; index < 6; index++ {
+		request[index] = 0xff
+	}
+	copy(request[6:12], requesterMAC)
+	binary.BigEndian.PutUint16(request[12:14], 0x0806)
+	binary.BigEndian.PutUint16(request[14:16], 1)
+	binary.BigEndian.PutUint16(request[16:18], 0x0800)
+	request[18], request[19] = 6, 4
+	binary.BigEndian.PutUint16(request[20:22], 1)
+	copy(request[22:28], requesterMAC)
+	copy(request[28:32], requesterIP.To4())
+	copy(request[38:42], guestIP.To4())
+
+	manager.handleLANARP(request)
+
+	if len(port.writes) != 1 {
+		t.Fatalf("ARP replies = %d, want 1", len(port.writes))
+	}
+	reply := port.writes[0]
+	if binary.BigEndian.Uint16(reply[20:22]) != 2 {
+		t.Fatal("bridge did not send an ARP reply")
+	}
+	if !bytes.Equal(reply[0:6], requesterMAC) ||
+		!bytes.Equal(reply[6:12], manager.config.MAC) ||
+		!net.IP(reply[28:32]).Equal(guestIP) {
+		t.Fatalf("unexpected proxy ARP reply: %x", reply)
+	}
+}
+
+func mustMAC(t *testing.T, value string) net.HardwareAddr {
+	t.Helper()
+	mac, err := net.ParseMAC(value)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return mac
 }
 
 func TestStaticResponsesKeepIsolationHeaders(t *testing.T) {
