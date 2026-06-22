@@ -96,7 +96,8 @@ curl, wget, nano, vim, python3, pip, htop, net-tools, coreutils, etc. — all
 installable **offline** when internet is unavailable. (We use 9p, not an IDE disk, because the alpine-virt
 kernel can't see IDE disks but supports virtio-9p natively.)
 
-For networking, use **NAT** for normal internet access. **NAT Network** is the
+For networking, use **NAT** for a stable per-VM `192.168.86.x` address and normal
+internet access. NAT VMs remain isolated from each other. **NAT Network** is the
 separate VM-to-VM Ethernet relay and only has internet when its relay host also
 provides NAT.
 

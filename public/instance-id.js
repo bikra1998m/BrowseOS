@@ -33,6 +33,60 @@
     return b.map(x => x.toString(16).padStart(2, "0")).join(":");
   }
 
+  function preferredNATHost(id) {
+    let h = 2166136261;
+    for (let i = 0; i < id.length; i++) {
+      h ^= id.charCodeAt(i);
+      h = Math.imul(h, 16777619) >>> 0;
+    }
+    return 2 + (h % 253);
+  }
+
+  function validNATIP(value) {
+    const match = /^192\.168\.86\.(\d{1,3})$/.exec(String(value || ""));
+    if (!match) return false;
+    const host = Number(match[1]);
+    return host >= 2 && host <= 254;
+  }
+
+  // Keep a stable per-origin allocation table so even the rare case of two VM
+  // IDs hashing to the same preferred host address is resolved consistently.
+  function allocateNATIP(id, env) {
+    const fallback = `192.168.86.${preferredNATHost(id)}`;
+    const storage = env && env.localStorage;
+    if (!storage || typeof storage.getItem !== "function" ||
+        typeof storage.setItem !== "function") return fallback;
+
+    const key = "browseros-nat-ip-map-v1";
+    try {
+      const parsed = JSON.parse(storage.getItem(key) || "{}");
+      const map = parsed && typeof parsed === "object" && !Array.isArray(parsed)
+        ? parsed
+        : {};
+      if (validNATIP(map[id])) return map[id];
+
+      const used = new Set(
+        Object.entries(map)
+          .filter(([owner, ip]) => owner !== id && validNATIP(ip))
+          .map(([, ip]) => ip)
+      );
+      const preferred = preferredNATHost(id);
+      for (let offset = 0; offset < 253; offset++) {
+        const host = 2 + ((preferred - 2 + offset) % 253);
+        const candidate = `192.168.86.${host}`;
+        if (!used.has(candidate)) {
+          map[id] = candidate;
+          storage.setItem(key, JSON.stringify(map));
+          return candidate;
+        }
+      }
+    } catch (_) {
+      // Storage can be unavailable in privacy modes; deterministic fallback is
+      // still stable and collisions remain extremely unlikely.
+    }
+    return fallback;
+  }
+
   function create(env) {
     const params = new URLSearchParams(env.location.search);
     let id = normalize(params.get("vm")) ||
@@ -47,8 +101,12 @@
       env.history.replaceState(null, "", next);
     }
 
-    return Object.freeze({ id, mac: deriveMAC(id) });
+    return Object.freeze({
+      id,
+      mac: deriveMAC(id),
+      natIP: allocateNATIP(id, env),
+    });
   }
 
-  return { normalize, deriveMAC, create };
+  return { normalize, deriveMAC, allocateNATIP, create };
 });

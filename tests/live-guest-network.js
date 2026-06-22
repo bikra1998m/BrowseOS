@@ -99,8 +99,20 @@ ws.onopen = async () => {
       if (appReady) break;
     }
     assert(appReady, "BrowserOS app did not finish loading");
-    const selectedBackend = await evaluate(`resolveDefaultInternetUrl()`);
+    const networkConfig = await evaluate(`(async () => {
+      const opts = {};
+      await applyNetwork(opts);
+      return {
+        backend: await resolveDefaultInternetUrl(),
+        instance: window.__browserOSInstance,
+        device: opts.net_device
+      };
+    })()`);
+    const selectedBackend = networkConfig.backend;
+    const expectedIP = networkConfig.device.vm_ip;
     console.log("Selected guest network backend:", selectedBackend);
+    console.log("Expected stable guest IP:", expectedIP);
+    assert.equal(expectedIP, networkConfig.instance.natIP);
     await evaluate(`document.getElementById("btnStart").click()`);
 
     let text = "";
@@ -122,7 +134,7 @@ ws.onopen = async () => {
         "nslookup dl-cdn.alpinelinux.org; " +
         "wget -T 30 -O /dev/null https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86/APKINDEX.tar.gz " +
         "&& printf 'HTTPS_%s\\n' OK || printf 'HTTPS_%s\\n' FAIL; " +
-        "ip -4 addr show dev eth0 | grep -q 'inet ' && printf 'IP_%s\\n' OK || printf 'IP_%s\\n' FAIL; " +
+        "ip -4 addr show dev eth0 | grep -q 'inet ${expectedIP}/' && printf 'IP_%s\\n' OK || printf 'IP_%s\\n' FAIL; " +
         "printf 'NET_%s\\n' DONE\\n",
         8
       );

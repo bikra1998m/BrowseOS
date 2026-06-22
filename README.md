@@ -112,9 +112,10 @@ Output lands in `launcher/dist/` (e.g. `BrowserOS-windows-x64.exe`,
 binary boots a **full Alpine Linux** offline. Verified truly static
 (`ldd` → "not a dynamic executable").
 
-The launcher exposes two different network modes: **NAT** uses its built-in WISP
-proxy for normal outbound internet, while **NAT Network** uses the raw Ethernet
-relay for communication between BrowserOS VMs.
+The launcher exposes two different network modes: **NAT** gives every saved VM a
+stable unique `192.168.86.x` address and uses the built-in WISP proxy for normal
+outbound internet, while **NAT Network** uses the raw Ethernet relay for direct
+communication between BrowserOS VMs.
 
 ## 📄 License
 Your code here is yours. v86 is BSD-2-Clause; Alpine is its own license.

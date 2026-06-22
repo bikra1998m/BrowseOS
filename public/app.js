@@ -965,6 +965,9 @@ async function applyNetwork(opts) {
     // browser tabs, so this behaves as an offline NIC — closest honest mapping).
     dev.relay_url = "";  // present NIC but no upstream
   } else if (n.attach === "nat") {
+    // Each saved BrowserOS VM gets a stable address instead of every isolated
+    // WISP namespace displaying v86's default 192.168.86.100.
+    dev.vm_ip = Instance.natIP;
     dev.relay_url = (n.name && (/^(?:wisp|wisps|ws|wss):\/\//.test(n.name) || n.name === "fetch"))
       ? n.name
       : await resolveDefaultInternetUrl();
@@ -1002,7 +1005,7 @@ async function applyNetwork(opts) {
   const NAME_LABELS = { nat:"Internet proxy", natnet:"NAT network", bridged:"Bridge name",
                         internal:"Network name", hostonly:"Adapter", notattached:"" };
   const NOTES = {
-    nat:        "The standalone launcher uses its built-in WISP proxy (no admin rights required). On a hosted deployment, enter a compatible <code>wisps://...</code> endpoint. DNS and TCP/HTTPS work; inbound ports are not exposed.",
+    nat:        "Each VM gets a stable unique <code>192.168.86.x</code> address. The standalone launcher uses its built-in WISP proxy; hosted deployments need a compatible <code>wisps://...</code> endpoint. DNS and TCP/HTTPS work, but NAT VMs remain isolated from each other.",
     natnet:     "<b>VMs share a subnet</b> via the raw Ethernet relay. The bundled relay gives each tab a unique 10.5.0.x address; internet on this mode requires a relay host with NAT.",
     bridged:    "<b>Not possible in a browser</b> — needs a real hypervisor (VirtualBox/VMware/QEMU) for a router DHCP IP. Use NAT here.",
     internal:   "Not available in a browser. Use NAT.",
